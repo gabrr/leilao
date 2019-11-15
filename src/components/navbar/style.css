@@ -1,0 +1,67 @@
+#bar {
+    display: flex;
+}
+
+#bar .logo {
+    font-size: 15px;
+    margin: 23px 0 0 5%;
+    width: 15%;
+}
+
+#bar .search-area {
+    width: 55%;
+    height: 30px;
+    margin-top: 20px;
+    position: relative;
+}
+
+#bar .search-input {
+    width: calc(100% - 15px);
+    height: 100%;
+    border: none;
+    padding-left: 15px;
+    font-family: "Popins", sans-serif;
+    color: #f2f2f2;
+}
+
+#bar .search-input:focus {
+    outline: none;
+}
+
+#bar .search-area::after {
+    content: " ";
+    width: 8%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    right: 0;
+    z-index: 2;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+#bar .search-area::before {
+    content: " ";
+    width: 8%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    cursor: pointer;
+    border-radius: 7px;
+    background-position: center;
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-image: url("../../svg/search-icon.png");
+}
+
+#bar .login-area {
+    margin: 23px 5% 0 5%;
+    display: flex;
+}
+
+#bar .login-area div {
+    margin-right: 8px;
+}
