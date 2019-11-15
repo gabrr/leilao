@@ -52,7 +52,7 @@
     cursor: pointer;
     border-radius: 7px;
     background-position: center;
-    background-size: 30%;
+    background-size: 15px;
     background-repeat: no-repeat;
     background-image: url("../../svg/search-icon.png");
 }
@@ -64,4 +64,67 @@
 
 #bar .login-area div {
     margin-right: 8px;
+}
+
+
+/* the navbar */
+
+#navbar {
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+}
+
+#navbar ul li {
+    display: inline;
+    padding: 5px 11px;
+    cursor: pointer;
+}
+
+#navbar ul {
+    position: relative;
+}
+
+.page-indicator {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 25px;
+    transition: cubic-bezier(.47, .11, 0, 1.32) 600ms;
+}
+
+@media only screen and (max-width: 768px) {
+    #bar {
+        display: block;
+    }
+    #bar .logo {
+        width: 95%;
+        font-size: 20px;
+    }
+    #bar .login-area {
+        display: none;
+    }
+    #navbar {
+        display: none;
+    }
+    .menu-toggle {
+        width: 40px;
+        height: 50px;
+        position: fixed;
+        top: 25px;
+        right: 8%;
+    }
+    .menu-toggle .bar1,
+    .menu-toggle .bar2 {
+        width: 40px;
+        height: 3px;
+        margin: 8px 0;
+        transition: cubic-bezier(.47, .11, 0, 1.32) 600ms;
+    }
+    .bar1.activated {
+        transform: rotate(40deg) translate(11px, 7px);
+    }
+    .bar2.activated {
+        transform: rotate(140deg) translate(-3px, -3px);
+    }
 }
