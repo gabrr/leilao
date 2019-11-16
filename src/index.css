@@ -78,3 +78,19 @@ div {
 .circle {
     border-radius: 50%;
 }
+
+
+/* dark blur */
+
+.blur {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.blur.active {
+    filter: blur(10px);
+    transition: ease-in-out 400ms;
+}
+
+.transition {
+    transition: ease-in-out 400ms;
+}

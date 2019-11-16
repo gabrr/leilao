@@ -31,25 +31,49 @@ export default class Navbar extends Component {
                 width = elementsPos[0].offsetWidth
                 pPos = (width / 2.5) + pos;
                 pointer.style.left = pPos + "px";
-            });
-            
+            });  
         })
+    }
 
+    bluringBg() {
+        
     }
 
     componentDidMount(){
         this.navbarPointer()
+        this.bluringBg()
     }
 
     menuToggler() {
+        // create the bars animation
         let togBtn = document.querySelector(".menu-toggle").childNodes;
         togBtn.forEach(x => x.classList.toggle("activated"));
+
+        // to make elements blured
+        let elms = document.querySelectorAll(".blur");
+        elms.forEach(el => {
+            el.classList.toggle("active");
+        })
+        
+
+        let mobileNavLink = document.querySelector(".mobile-nav-links");
+        if(mobileNavLink.className === "mobile-nav-links") {
+            setTimeout(() => {
+                mobileNavLink.classList.add("display");
+            }, 100)
+        } else {
+            mobileNavLink.classList.remove("display");
+        }
+        
+
+        // to show the links upon the navigation
+
     }
 
     render() {
         return (
             <React.Fragment>
-                <div id="bar">
+                <div id="bar" className="blur">
                     <div className="logo txt-head">gabrr Leilões</div>
                     <div className="search-area">
                         <input className="search-input el-cl round" type="text">
@@ -64,7 +88,7 @@ export default class Navbar extends Component {
                     </div>
                 </div>
                 <nav id="navbar">
-                    <ul className="navigation txt-body">
+                    <ul className="navigation txt-body blur">
                         <li>Início</li>
                         <li>Leiloar algo</li>
                         <li>Sobre nós</li>
@@ -75,6 +99,58 @@ export default class Navbar extends Component {
                 <div className="menu-toggle" onClick={this.menuToggler}>
                     <div className="bar1 whit-cl"></div>
                     <div className="bar2 whit-cl"></div>
+                </div>
+                <div className="mobile-nav-links">
+                    <div className="login-area">
+                        <div className="register txt-body link">Cadastrar</div>
+                        <div className="login txt-body link">Entrar</div>
+                        <div className="avatar">
+                            :)
+                        </div>
+                    </div>
+                    <ul className="mobile-links">
+                        <li>Leiloar algo</li>
+                        <li>Sobre nós</li>
+                        <li>Contato</li>
+                    </ul>
+                </div>
+                <div className="blur">
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
+                    </p>
                 </div>
             </React.Fragment>
         )
