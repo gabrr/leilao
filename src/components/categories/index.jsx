@@ -15,7 +15,7 @@ export default class Categories extends Component {
 
     render() {
         return (
-            <div id="categories-holder">
+            <div id="categories-holder" className="blur">
                 <div className="txt-head">Busque por categorias</div>
                 <ul>
                     <li><img src={building} alt="anthing you want"/></li>
