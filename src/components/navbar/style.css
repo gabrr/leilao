@@ -154,7 +154,7 @@ p {
     }
     #bar .search-area::after,
     #bar .search-area::before {
-        width: 11%;
+        width: 13vw;
     }
     /* the navigation for mobile */
     .mobile-nav-links {
