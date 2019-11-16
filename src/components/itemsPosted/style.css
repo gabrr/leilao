@@ -1,0 +1,22 @@
+#itemsPosted {
+    width: 90%;
+    margin: 0 5%;
+}
+
+#itemsPosted .txt-head {
+    position: relative;
+    width: max-content;
+    padding-bottom: 30px;
+}
+
+#itemsPosted .txt-head::after {
+    content: "";
+    width: 37px;
+    height: 43px;
+    top: 0;
+    right: -51px;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-image: url("../../assets/change.png");
+}

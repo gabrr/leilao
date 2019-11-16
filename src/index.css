@@ -91,7 +91,7 @@ div {
 }
 
 .blur.active {
-    filter: blur(10px);
+    filter: blur(10px) brightness(0.6);
     transition: ease-in-out 400ms;
 }
 
