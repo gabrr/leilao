@@ -1,5 +1,7 @@
 #bar {
     display: flex;
+    padding-top: 30px;
+    margin-top: -30px;
 }
 
 #bar .logo {
@@ -160,7 +162,7 @@ p {
     .mobile-nav-links {
         width: 95%;
         height: 100%;
-        top: -10px;
+        top: 0;
         display: none;
         opacity: 0;
         z-index: 3;
@@ -170,7 +172,6 @@ p {
     }
     .mobile-nav-links.display {
         display: block;
-        top: 0;
         opacity: 1;
     }
     .mobile-nav-links .login-area {
