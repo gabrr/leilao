@@ -1,7 +1,6 @@
 #cards-holder {
     width: 90%;
-    padding: 0 5%;
-    padding-top: 60px;
+    padding: 60px 5%;
 }
 
 .cards-grid {
@@ -10,7 +9,7 @@
 }
 
 .card {
-    margin: 25px 10% 0 0;
+    margin: 25px 5% 0 5%;
     padding-bottom: 20px;
     position: relative;
 }
@@ -44,4 +43,37 @@
     font-size: 50%;
     font-weight: 600;
     margin: 20px auto;
+}
+
+
+/* for small computers */
+
+@media only screen and (max-width: 1000px) {
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 33.33%);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
+    }
+    .card img {
+        height: 160px;
+    }
+    .card {
+        margin: 25px 8% 0 8%;
+    }
+    .txt-head {
+        margin-left: 8%;
+    }
 }

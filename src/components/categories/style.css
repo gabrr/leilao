@@ -1,5 +1,29 @@
 #categories-holder {
     width: 90%;
-    padding: 0 5%;
-    padding-top: 60px;
+    padding: 60px 5%;
+    display: grid;
+}
+
+#categories-holder ul {
+    list-style: none;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 25%);
+}
+
+#categories-holder li {
+    display: inline-block;
+    margin: 60px 20%;
+    cursor: pointer;
+}
+
+#categories-holder img {
+    width: 100%;
+    border-radius: 50%;
+    max-width: 130px;
+    transition: 200ms ease-in-out;
+}
+
+#categories-holder img:hover {
+    background-color: rgba(255, 150, 150, 0.80);
 }

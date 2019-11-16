@@ -8,6 +8,7 @@ import house from "../../assets/casapiscina.png"
 export default class Highlighted extends Component {
     render() {
         return (
+            <div id="highlighted">
             <div id="cards-holder" className="blur">
                 <div className="txt-head">Leilões em destaque</div>
                 <div className="cards-grid">
@@ -36,6 +37,7 @@ export default class Highlighted extends Component {
                         <div className="card-button">Dar lance</div>
                     </div>
                 </div>
+            </div>
             </div>
         )
     }
