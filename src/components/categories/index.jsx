@@ -4,9 +4,15 @@ import motor from "../../assets/motor.png"
 import building from "../../assets/building.png"
 import car from "../../assets/sedan.png"
 import "./style.css";
-import { send } from 'q';
 
 export default class Categories extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            pos: false
+        }
+    }
+
     render() {
         return (
             <div id="categories-holder">
