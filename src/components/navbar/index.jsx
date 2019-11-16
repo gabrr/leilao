@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import userAvatar from "../../svg/user.png"
 import "./style.css";
 
 export default class Navbar extends Component {
@@ -83,7 +84,7 @@ export default class Navbar extends Component {
                         <div className="register txt-body link">Cadastrar</div>
                         <div className="login txt-body link">Entrar</div>
                         <div className="avatar">
-                            :)
+                            <img src={userAvatar} alt={"user avatar"}/>
                         </div>
                     </div>
                 </div>
@@ -105,7 +106,7 @@ export default class Navbar extends Component {
                         <div className="register txt-body link">Cadastrar</div>
                         <div className="login txt-body link">Entrar</div>
                         <div className="avatar">
-                            :)
+                            <img src={userAvatar} alt={"user avatar"}/>
                         </div>
                     </div>
                     <ul className="mobile-links">
