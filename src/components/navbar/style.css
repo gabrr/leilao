@@ -93,6 +93,11 @@
     transition: cubic-bezier(.47, .11, 0, 1.32) 600ms;
 }
 
+p {
+    margin: 40px 5%;
+    text-align: left;
+}
+
 @media only screen and (max-width: 768px) {
     #bar {
         display: block;
@@ -103,6 +108,7 @@
     }
     #bar .login-area {
         display: none;
+        transition: ease-in-out 400ms;
     }
     #navbar {
         display: none;
@@ -113,6 +119,7 @@
         position: fixed;
         top: 25px;
         right: 8%;
+        z-index: 4;
     }
     .menu-toggle .bar1,
     .menu-toggle .bar2 {
@@ -126,5 +133,48 @@
     }
     .bar2.activated {
         transform: rotate(140deg) translate(-3px, -3px);
+    }
+    #bar .search-area {
+        width: 80%;
+        height: 40px;
+        margin-top: 30px;
+        margin-left: 10%;
+    }
+    #bar .search-area::after,
+    #bar .search-area::before {
+        width: 11%;
+    }
+    /* the navigation for mobile */
+    .mobile-nav-links {
+        width: 95%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        opacity: 0;
+        z-index: 3;
+        position: fixed;
+        overflow-y: scroll;
+        transition: ease-in 200ms;
+    }
+    .mobile-nav-links.display {
+        left: 5%;
+        opacity: 1;
+    }
+    .mobile-nav-links .login-area {
+        display: flex;
+        margin-top: 120px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    .mobile-nav-links .login-area div {
+        padding: 2px 14px;
+    }
+    .mobile-nav-links .mobile-links {
+        margin: 55px 0 0 50%;
+        transform: translateX(-50%);
+        list-style: none;
+    }
+    .mobile-nav-links .mobile-links li {
+        padding: 15px 10px;
     }
 }
