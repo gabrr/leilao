@@ -76,7 +76,7 @@ export default class Navbar extends Component {
             <React.Fragment>
                 <div id="bar" className="blur">
                     <div className="logo txt-head">gabrr Leilões</div>
-                    <div className="search-area">
+                    <div className="search-area shadow">
                         <input className="search-input el-cl round" type="text">
                         </input>
                     </div>
@@ -114,44 +114,6 @@ export default class Navbar extends Component {
                         <li>Sobre nós</li>
                         <li>Contato</li>
                     </ul>
-                </div>
-                <div className="blur">
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sequi eveniet ea perferendis quos vitae facere quibusdam est dolor! Explicabo libero at sapiente beatae repellat commodi voluptate nemo, distinctio dolorem.
-                    </p>
                 </div>
             </React.Fragment>
         )
