@@ -3,6 +3,7 @@ import Navbar from "./components/navbar";
 import Highlighted from "./components/highlighted"
 import Categories from "./components/categories"
 import ItemsPoted from "./components/itemsPosted"
+import Footer from "./components/footer"
 import "./App.css"
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Highlighted />
       <Categories/>
       <ItemsPoted />
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,16 @@
+footer {
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    width: 60%;
+    margin: 150px auto 20px;
+}
+
+footer img {
+    max-width: 45px;
+}
