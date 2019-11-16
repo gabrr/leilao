@@ -76,7 +76,7 @@ export default class Navbar extends Component {
             <React.Fragment>
                 <div id="bar" className="blur">
                     <div className="logo txt-head">gabrr Leilões</div>
-                    <div className="search-area">
+                    <div className="search-area shadow">
                         <input className="search-input el-cl round" type="text">
                         </input>
                     </div>
