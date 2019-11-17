@@ -189,6 +189,7 @@ p {
         margin: 55px 0 0 50%;
         transform: translateX(-50%);
         list-style: none;
+        padding-bottom: 60px;
     }
     .mobile-nav-links .mobile-links li {
         padding: 15px 10px;

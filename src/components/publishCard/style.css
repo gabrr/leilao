@@ -1,0 +1,61 @@
+#publishCard .card {
+    top: 200px;
+    left: 50%;
+    margin: auto;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 2;
+    max-width: 800px;
+    width: 90%;
+}
+
+.img-uploader {
+    height: 230px;
+    width: 100%;
+    background: url("../../assets/cloud.png") no-repeat;
+    background-size: 60px;
+    background-position: center;
+    background-color: #5F5F9C;
+    text-align: center;
+    position: relative;
+}
+
+.img-uploader .txt-body {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.publish-grid {
+    width: 100%;
+    height: 450px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 50px;
+}
+
+.publish-right {}
+
+.publish-left {
+    display: table-row;
+}
+
+#publishCard .card-button {
+    grid-column: span 2;
+}
+
+.publish-grid form {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.publish-grid label {
+    font-size: 13px;
+    padding-top: 40px;
+}
+
+.publish-grid input {
+    height: 30px;
+    width: 60%;
+}
