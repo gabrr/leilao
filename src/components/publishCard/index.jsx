@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import cloud from "../../assets/cloud.png"
 import phone from "../../assets/phone.png"
 import motor from "../../assets/motor.png"
 import building from "../../assets/building.png"

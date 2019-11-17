@@ -5,17 +5,19 @@ import Categories from "./components/categories"
 import ItemsPoted from "./components/itemsPosted"
 import Footer from "./components/footer"
 import PublishCard from "./components/publishCard"
+import About from "./components/about"
 import "./App.css"
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Categories/>
-      {/* <Highlighted />
+      <About />
+      {/* <Categories/>
+      <Highlighted />
       <ItemsPoted />
-      <Footer /> */}
-      <PublishCard />
+    <PublishCard /> */}
+    <Footer />
     </div>
   );
 }
