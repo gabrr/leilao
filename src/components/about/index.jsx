@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import peter from "../../assets/man.png"
+import paulo from "../../assets/man2.png"
+import aline from "../../assets/woman.png"
+import bruna from "../../assets/woman2.png"
+
 import "./style.css"
 
 export default class About extends Component {
@@ -22,22 +26,22 @@ export default class About extends Component {
                             <div className="tes-message">Superou minhas expectativas pela facilidade.</div>
                         </li>
                         <li>
-                            <img className="circle" src={peter} alt="person1"/>
-                            <div className="tes-name txt-head">Peter</div>
-                            <div className="tes-occup">Estudante de direto</div>
-                            <div className="tes-message">Superou minhas expectativas pela facilidade.</div>
+                            <img className="circle" src={paulo} alt="person1"/>
+                            <div className="tes-name txt-head">Paulo</div>
+                            <div className="tes-occup">Arquiteto</div>
+                            <div className="tes-message">Fiquei impressionado com a qualidade de todo o processo, desde a apresentação dos itens sendo leiloads como o fechamento.</div>
                         </li>
                         <li>
-                            <img className="circle" src={peter} alt="person1"/>
-                            <div className="tes-name txt-head">Peter</div>
-                            <div className="tes-occup">Estudante de direto</div>
-                            <div className="tes-message">Superou minhas expectativas pela facilidade.</div>
+                            <img className="circle" src={aline} alt="person1"/>
+                            <div className="tes-name txt-head">Aline</div>
+                            <div className="tes-occup">Corretora </div>
+                            <div className="tes-message">Pra mim que sou corretora é muito difícil fazer coisas demoradas e burocráticas mas a gabrr é muito eficiente, obrigada :)</div>
                         </li>
                         <li>
-                            <img className="circle" src={peter} alt="person1"/>
-                            <div className="tes-name txt-head">Peter</div>
-                            <div className="tes-occup">Estudante de direto</div>
-                            <div className="tes-message">Superou minhas expectativas pela facilidade.</div>
+                            <img className="circle" src={bruna} alt="person1"/>
+                            <div className="tes-name txt-head">Bruna</div>
+                            <div className="tes-occup">Programadora</div>
+                            <div className="tes-message">Eu amo a facilidade de navegação e o paraíso visual que a gabrr proporcina comparando com outros sites de leilões.</div>
                         </li>
                     </ul>
                 </div>
