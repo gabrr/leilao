@@ -1,35 +1,35 @@
-#categories-holder {
+.categories-style {
     width: 90%;
     padding: 60px 5%;
     display: grid;
 }
 
-#categories-holder ul {
+.categories-style ul {
     list-style: none;
     display: grid;
     width: 100%;
     grid-template-columns: repeat(4, 25%);
 }
 
-#categories-holder li {
+.categories-style li {
     display: inline-block;
     margin: 60px 20%;
     cursor: pointer;
 }
 
-#categories-holder img {
+.categories-style img {
     width: 100%;
     border-radius: 50%;
     max-width: 130px;
     transition: 200ms ease-in-out;
 }
 
-#categories-holder img:hover {
+.categories-style img:hover {
     background-color: rgba(255, 150, 150, 0.80);
 }
 
 @media only screen and (max-width: 768px) {
-    #categories-holder li {
+    .categories-style li {
         margin: 60px 10%;
     }
 }

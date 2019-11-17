@@ -16,13 +16,15 @@ export default class Categories extends Component {
     render() {
         return (
             <div id="categories-holder" className="blur">
-                <div className="txt-head">Busque por categorias</div>
-                <ul>
-                    <li><img src={building} alt="anthing you want"/></li>
-                    <li><img src={phone} alt="anthing you want"/></li>
-                    <li><img src={car} alt="anthing you want"/></li>
-                    <li><img src={motor} alt="anthing you want"/></li>
-                </ul>
+                <div className="categories-style">
+                    <div className="txt-head">Busque por categorias</div>
+                    <ul>
+                        <li><img src={building} alt="anthing you want"/></li>
+                        <li><img src={phone} alt="anthing you want"/></li>
+                        <li><img src={car} alt="anthing you want"/></li>
+                        <li><img src={motor} alt="anthing you want"/></li>
+                    </ul>
+                </div>
             </div>
         )
     }

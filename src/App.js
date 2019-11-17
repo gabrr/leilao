@@ -11,8 +11,8 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      {/* <Highlighted />
       <Categories/>
+      {/* <Highlighted />
       <ItemsPoted />
       <Footer /> */}
       <PublishCard />
