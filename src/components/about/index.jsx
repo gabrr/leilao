@@ -5,7 +5,7 @@ import "./style.css"
 export default class About extends Component {
     render() {
         return (
-            <div id="About">
+            <div id="About" className="blur">
                 <div className="presentation">
                     <div className="txt-head" style={{fontSize: "30px"}}>gabrr Leilões</div>
                     <p className="txt-body">
