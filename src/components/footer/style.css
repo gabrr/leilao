@@ -11,6 +11,23 @@ footer ul {
     margin: 150px auto 20px;
 }
 
+footer li {
+    margin: 0 5px;
+}
+
 footer img {
     max-width: 45px;
+}
+
+@media only screen and (min-width: 450px) {
+    footer ul {
+        width: 31%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    footer ul {
+        width: 20%;
+        margin-bottom: 40px;
+    }
 }
