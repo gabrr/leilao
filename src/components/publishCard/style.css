@@ -1,0 +1,158 @@
+#publishCard .card {
+    top: 200px;
+    left: 50%;
+    margin: 0 auto 130px;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 2;
+    max-width: 800px;
+    width: 90%;
+    padding-bottom: 100px;
+}
+
+.img-uploader {
+    height: 230px;
+    width: 100%;
+    background: url("../../assets/cloud.png") no-repeat;
+    background-size: 60px;
+    background-position: center;
+    background-color: #5F5F9C;
+    text-align: center;
+    position: relative;
+}
+
+.img-uploader .txt-body {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.publish-grid {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr auto;
+}
+
+#publishCard .card-button {
+    grid-column: span 2;
+    height: max-content;
+    margin-top: 70px;
+}
+
+.publish-grid form {
+    margin: 20px 0 0 15%;
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.publish-grid label {
+    font-size: 13px;
+    padding: 40px 3px 5px;
+}
+
+#publ-finish-date,
+#publ-finish-time {
+    width: max-content;
+}
+
+.publish-grid input {
+    height: 30px;
+    width: 68%;
+    padding: 0 12px;
+    color: #f2f2f2;
+}
+
+.publish-grid input::placeholder {
+    color: #f2f2f2;
+}
+
+.publ-switch .txt-body {
+    padding: 40px 3px 5px;
+}
+
+.switch-bt {
+    font-size: 13px;
+    width: max-content;
+    display: flex;
+    position: relative;
+}
+
+.switch-bt .option1,
+.switch-bt .option2 {
+    padding: 10px 20px;
+}
+
+.switch-bt .selector {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 50%;
+}
+
+
+/* start the right side */
+
+.publish-right {
+    margin-top: 60px;
+    margin-left: 5%;
+}
+
+.publish-right .categories-style {
+    padding: 0;
+    margin: 20px 0 40px;
+}
+
+.publish-right .categories-style li {
+    margin: 0;
+}
+
+.publish-right .categories-style img {
+    width: 65%;
+}
+
+#publ-message {
+    margin: 5px 0px;
+    width: 76%;
+    height: 100px;
+    padding: 8px;
+    color: #f2f2f2;
+}
+
+@media only screen and (max-width: 768px) {
+    .publish-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto auto;
+    }
+    .publish-right {
+        margin-top: 60px;
+        margin-left: 15%;
+        width: 80%;
+        grid-row: 2;
+    }
+    .publish-right .categories-style ul {
+        text-align: center;
+    }
+    .publish-grid form {
+        margin: 20px 0 0 5% !important;
+    }
+    #publ-title {
+        width: calc(90% - 12px) !important;
+    }
+    #publ-message {
+        width: 85%;
+    }
+    .publish-right {
+        margin-left: 5%;
+        width: 100%;
+    }
+    #publishCard .card-button {
+        margin-top: 25px;
+    }
+    #publishCard .card {
+        padding-bottom: 40px;
+    }
+}

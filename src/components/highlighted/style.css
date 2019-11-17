@@ -14,7 +14,7 @@
     position: relative;
 }
 
-.card img {
+#cards-holder .card img {
     width: 100%;
     height: 135px;
     object-fit: cover;
@@ -67,7 +67,7 @@
         display: grid;
         grid-template-columns: repeat(1, 100%);
     }
-    .card img {
+    #cards-holder .card img {
         height: 160px;
     }
     .card {

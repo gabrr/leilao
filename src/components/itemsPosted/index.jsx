@@ -54,7 +54,7 @@ export default class ItemsPosted extends Component {
                 <br/>
                 <br/>
                 <div className="card-button">
-                    load more
+                    Carregar mais
                 </div>
             </div>
         )
