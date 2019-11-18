@@ -1,0 +1,70 @@
+.contact-grid {
+    max-width: 950px;
+    display: grid;
+    margin: 80px auto;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.contact-grid p {
+    margin: 0%;
+}
+
+.contact-grid .txt-head {
+    grid-column: span 2;
+    text-align: center;
+}
+
+.contact-grid .cont-left {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 70px 0 0 10%;
+}
+
+.contact-grid form {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.contact-grid label {
+    margin-top: 40px;
+}
+
+.contact-grid .cont-right {
+    display: grid;
+    margin: 70px 10% 0 15%;
+}
+
+.contact-grid input {
+    height: 30px;
+    width: 68%;
+    padding: 0 12px;
+    color: #f2f2f2;
+}
+
+.contact-grid .card-button {
+    margin-left: 38%;
+}
+
+@media only screen and (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 100%;
+    }
+    .contact-grid textarea {
+        width: 100%;
+    }
+    .contact-grid .txt-head {
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .contact-grid .cont-left {
+        margin: 70px 10% 0 10%;
+    }
+    .contact-grid .cont-right {
+        margin: 70px 10% 0 10%;
+        grid-row: 2;
+        margin-bottom: -70px;
+    }
+    .contact-grid .card-button {
+        margin-left: auto;
+    }
+}

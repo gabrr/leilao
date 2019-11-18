@@ -41,7 +41,7 @@ export default class About extends Component {
                             <img className="circle" src={bruna} alt="person1"/>
                             <div className="tes-name txt-head">Bruna</div>
                             <div className="tes-occup">Programadora</div>
-                            <div className="tes-message">Eu amo a facilidade de navegação e o paraíso visual que a gabrr proporcina comparando com outros sites de leilões.</div>
+                            <div className="tes-message">Eu amo a facilidade de navegação e o paraíso visual que a gabrr proporciona comparando com outros sites de leilões.</div>
                         </li>
                     </ul>
                 </div>
