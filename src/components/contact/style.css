@@ -50,7 +50,7 @@
         grid-template-columns: 100%;
     }
     .contact-grid textarea {
-        width: 100%;
+        width: 90%;
     }
     .contact-grid .txt-head {
         grid-row: 1;
@@ -62,7 +62,7 @@
     .contact-grid .cont-right {
         margin: 70px 10% 0 10%;
         grid-row: 2;
-        margin-bottom: -70px;
+        margin-bottom: -65px;
     }
     .contact-grid .card-button {
         margin-left: auto;
