@@ -7,19 +7,21 @@ import Footer from "./components/footer"
 import PublishCard from "./components/publishCard"
 import About from "./components/about"
 import Contact from "./components/contact"
+import Bidding from "./components/bidding"
 import "./App.css"
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Contact />
-      {/* <Categories/>
-      <About />
       <Highlighted />
+      <Categories/>
       <ItemsPoted />
-    <PublishCard /> */}
-    <Footer />
+      {/* <Bidding />
+      <Contact /> 
+      <About />
+      <PublishCard /> */}
+      <Footer />
     </div>
   );
 }
