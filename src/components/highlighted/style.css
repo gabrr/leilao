@@ -22,7 +22,7 @@
 }
 
 .card-head {
-    font-size: 80%;
+    font-size: 90%;
     font-weight: 600;
     line-height: 16px;
     margin: 10px 6%;
@@ -31,7 +31,7 @@
 }
 
 .card-txt-body {
-    font-size: 65%;
+    font-size: 75%;
     font-weight: 400;
     margin: 0 6%;
 }
