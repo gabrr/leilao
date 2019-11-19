@@ -149,6 +149,9 @@ export default class ItemsPosted extends Component {
                                     <div>14/11/2019 16:45</div>
                                     <div>Usuário: Tarcizo</div>
                                 </div>
+                                <div className="bidding-input-outer">
+                                    <input className="round el2-cl" type="number" placeholder="Exemplo: 3000"/>
+                                </div>
                             </div>
                         </div>
                         <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>

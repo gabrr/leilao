@@ -49,12 +49,15 @@
 /* classes to be applied when card is clicked */
 
 .card .grownImage {
-    height: 250px !important;
+    height: 290px !important;
 }
 
 .card.grown {
     height: 700px !important;
 }
+
+
+/* styles for the cards when it expands */
 
 #cardAdditionalData {
     transition: 200ms ease-in-out 100ms;
@@ -67,7 +70,7 @@
 }
 
 #cardAdditionalData .characs-holder {
-    margin-top: 50px;
+    margin-top: -100px;
     grid-column: 1;
     grid-row: 2;
     margin-left: 6%;
@@ -86,9 +89,41 @@
 .bidding-in-card .current-bidding-value,
 .bidding-in-card .last-bid-info {
     margin-left: 6%;
+    font-weight: 600;
+}
+
+.bidding-in-card {
+    margin-left: 30%;
+    margin-top: -50px;
+}
+
+.bidding-in-card .card-head {
+    margin-bottom: 0;
+}
+
+.current-bidding-value {
+    font-size: 150%;
+    margin-bottom: 20px;
+    color: #D08484;
 }
 
 .card-head.grown-head {
     margin-top: 40px;
     width: 60%;
+}
+
+.bidding-input-outer {
+    margin-left: 6%;
+}
+
+.bidding-input-outer input {
+    margin-top: 40px;
+    height: 30px;
+    color: #f2f2f2;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.bidding-input-outer input:focus {
+    outline: 0;
 }
