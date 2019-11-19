@@ -19,8 +19,8 @@ export default class ItemsPosted extends Component {
 
         this.cardClicked = this.cardClicked.bind(this)
         this.closingCard = this.closingCard.bind(this)
-        this.handleChange = this.handleChange.bind(this)
-        this.biddingFormat = this.biddingFormat.bind(this)
+        // this.handleChange = this.handleChange.bind(this)
+        // this.biddingFormat = this.biddingFormat.bind(this)
     }
 
     closingCard(x) {
@@ -40,7 +40,7 @@ export default class ItemsPosted extends Component {
             x.target.offsetParent.firstChild.classList.remove("grownImage")
             x.target.offsetParent.classList.remove("grown")
             x.target.offsetParent.children[1].classList.remove("grown-head")
-            x.target.offsetParent.children[3].classList.remove("active")
+            x.target.offsetParent.children[4].classList.remove("active")
             x.target.offsetParent.lastChild.classList.remove("active")
             x.target.offsetParent.lastChild.firstChild.classList.remove("active")
             x.target.style.display = "none"
@@ -49,23 +49,29 @@ export default class ItemsPosted extends Component {
         
     }
 
-    handleChange(e) {
-        let value = e.target.value;
-        this.setState({
-            inputValue: value
-        })
-    }
+    // handleChange(e) {
+    //     let value = e.target.value;
+    //     this.setState({
+    //         inputValue: value
+    //     })
 
-    biddingFormat(num) {
-        if(num) {
-            let sum = parseInt(num) + parseInt(this.state.currentBid)
-            sum = sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            return `R$ ${sum}`
-        }
+    //     if(e.target.value < 3000) {
+    //         document.getElementById("biddingInput").style.backgroundColor = "#5F5F9C"
+    //     } else {
+    //         document.getElementById("biddingInput").style.backgroundColor = "#44ec7052"
+    //     }
+    // }
 
-        let sum = this.state.currentBid.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        return `R$ ${sum}`
-    }
+    // biddingFormat(num) {
+    //     if(num) {
+    //         let sum = parseInt(num) + parseInt(this.state.currentBid)
+    //         sum = sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    //         return `R$ ${sum}`
+    //     }
+
+    //     let sum = this.state.currentBid.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    //     return `R$ ${sum}`
+    // }
     
 
     cardClicked(x) {
@@ -95,9 +101,9 @@ export default class ItemsPosted extends Component {
             // the code above is about to make the card to expand
             const xTarget = x.target
 
-            if(x.target.offsetParent.children[3]) {
+            if(x.target.offsetParent.children[4]) {
                 setTimeout(() => {
-                    xTarget.offsetParent.children[3].classList.add("active")
+                    xTarget.offsetParent.children[4].classList.add("active")
                     // the additional data that comes in the cards
                 }, 300)
             }
@@ -166,8 +172,8 @@ export default class ItemsPosted extends Component {
                         <img src={macbook} className="round" alt="img of this"/>
                         <div className="card-head">Mansão nova 1000m2 com piscina olímpica</div>
                         <div className="card-txt-body"><strong>Termina em:</strong> 40 min</div>
+                        <div className="card-txt-body"><strong>Inicio:</strong>  10/11/2019</div>
                         <div id="cardAdditionalData">
-                            <div className="card-txt-body"><strong>Inicio:</strong>  10/11/2019</div>
                             <div className="characs-holder">
                                 <div className="card-head">Características</div>
                                 <div className="charac-info">
@@ -179,13 +185,13 @@ export default class ItemsPosted extends Component {
                             </div>
                             <div className="bidding-in-card">
                                 <div className="card-head">Lance atual:</div>
-                                <div className="current-bidding-value">{this.biddingFormat()}</div>
+                                <div className="current-bidding-value">R$ 2.800.000</div>
                                 <div className="last-bid-info">
                                     <div>14/11/2019 16:45</div>
                                     <div>Usuário: Tarcizo</div>
                                 </div>
                                 <div className="bidding-input-outer">
-                                    <input onChange={this.handleChange} className="round el2-cl" type="number" placeholder="Exemplo: 3000"/>
+                                    <input id="biddingInput" className="round el2-cl" type="number" placeholder="Mínimo: 3000"/>
                                     <div id="addition-sign">
                                         <div></div>
                                         <div></div>
@@ -193,7 +199,7 @@ export default class ItemsPosted extends Component {
                                 </div>
                                 <div className="users-bid">
                                     <div className="card-head">Seu lance:</div>
-                                    <div className="txt-high">{this.biddingFormat(this.state.inputValue)}</div>
+                                    <div className="txt-high">R$ 2.900.000</div>
                                 </div>
                             </div>
                         </div>
