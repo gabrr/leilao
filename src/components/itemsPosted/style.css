@@ -40,8 +40,9 @@
     height: 20px;
     display: none;
     cursor: pointer;
-    margin-left: 193px;
-    margin-top: -5px;
+    margin-top: -7px;
+    margin-left: 20px;
+    align-self: center;
     transition: ease-in-out 300ms;
 }
 
@@ -53,7 +54,7 @@
 }
 
 .card.grown {
-    height: 700px !important;
+    height: 740px !important;
 }
 
 
@@ -70,7 +71,7 @@
 }
 
 #cardAdditionalData .characs-holder {
-    margin-top: -100px;
+    margin-top: -150px;
     grid-column: 1;
     grid-row: 2;
     margin-left: 6%;
@@ -87,7 +88,8 @@
 }
 
 .bidding-in-card .current-bidding-value,
-.bidding-in-card .last-bid-info {
+.bidding-in-card .last-bid-info,
+.bidding-in-card .txt-high {
     margin-left: 6%;
     font-weight: 600;
 }
@@ -113,11 +115,13 @@
 }
 
 .bidding-input-outer {
-    margin-left: 6%;
+    margin-left: 5%;
+    margin-top: 40px;
+    position: relative;
+    width: max-content;
 }
 
 .bidding-input-outer input {
-    margin-top: 40px;
     height: 30px;
     color: #f2f2f2;
     font-size: 16px;
@@ -126,4 +130,59 @@
 
 .bidding-input-outer input:focus {
     outline: 0;
+}
+
+.bidding-input-outer::before {
+    position: absolute;
+    content: "";
+    width: 40px;
+    right: 0;
+    border-radius: 7px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+#addition-sign {
+    width: 30px;
+    height: 100%;
+    right: 1px;
+    position: absolute;
+    top: -3px;
+}
+
+#addition-sign div {
+    width: 2px;
+    height: 50%;
+    margin: 10px;
+    background-color: #f2f2f2;
+}
+
+#addition-sign div:nth-child(1) {
+    transform: rotate(90deg);
+    position: absolute;
+}
+
+#addition-sign div:nth-child(2) {
+    position: absolute;
+    transform: rotate(180deg);
+}
+
+.users-bid {
+    margin-top: 20px;
+}
+
+.users-bid .txt-high {
+    font-size: 120%;
+}
+
+.cards-button.active {
+    display: grid;
+    margin-top: 40px;
+    grid-template-columns: 1fr 1fr;
+    list-style: right;
+}
+
+.bid-button.active {
+    margin-right: 0;
+    font-size: 80%;
 }
