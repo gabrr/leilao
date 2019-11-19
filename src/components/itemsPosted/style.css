@@ -29,7 +29,7 @@
     width: 100%;
     height: 135px;
     object-fit: cover;
-    transition: 500ms ease-in-out 20ms;
+    transition: height 500ms ease-in-out 20ms;
 }
 
 
@@ -43,7 +43,7 @@
     margin-top: -7px;
     margin-left: 20px;
     align-self: center;
-    transition: ease-in-out 300ms;
+    transition: display ease-in-out 300ms;
 }
 
 
@@ -61,16 +61,10 @@
 /* styles for the cards when it expands */
 
 @keyframes fadein {
-    0% {
+    from {
         opacity: 0;
     }
-    50% {
-        opacity: 0;
-    }
-    60% {
-        opacity: 1;
-    }
-    100% {
+    to {
         opacity: 1;
     }
 }
@@ -83,7 +77,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     animation-name: fadein;
-    animation-duration: 1000ms;
+    animation-duration: 500ms;
     animation-timing-function: ease-in-out;
 }
 
@@ -117,7 +111,8 @@
 
 .bidding-in-card {
     margin-left: 30%;
-    margin-top: -50px;
+    margin-top: -70px;
+    grid-column: 2;
 }
 
 .bidding-in-card .card-head {
@@ -147,10 +142,11 @@
     color: #f2f2f2;
     font-size: 16px;
     padding-left: 10px;
+    transition: background-color 500ms ease-in-out;
 }
 
 .bidding-input-outer input:focus {
-    outline: 0;
+    outline: none;
 }
 
 .bidding-input-outer::before {
@@ -208,4 +204,22 @@
     transition: top 600ms;
     margin-right: 0;
     font-size: 80%;
+}
+
+@media only screen and (max-width: 768px) {
+    #cardAdditionalData .characs-holder {
+        margin-top: 30px;
+        grid-column: 1;
+        grid-row: 1;
+        margin-left: 6%;
+    }
+    .bidding-in-card {
+        grid-row: 2;
+        grid-column: 1;
+        margin-left: 6%;
+        margin-top: 20px;
+    }
+    #itemsPosted .card.grown {
+        height: 1100px !important;
+    }
 }
