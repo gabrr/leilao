@@ -36,7 +36,7 @@ export default class ItemsPosted extends Component {
             x.target.offsetParent.firstChild.classList.remove("grownImage")
             x.target.offsetParent.classList.remove("grown")
             x.target.offsetParent.children[1].classList.remove("grown-head")
-            x.target.offsetParent.children[3].style.display = "none"
+            x.target.offsetParent.children[3].classList.remove("active")
             x.target.offsetParent.lastChild.classList.remove("active")
             x.target.offsetParent.lastChild.firstChild.classList.remove("active")
             x.target.style.display = "none"
@@ -69,8 +69,8 @@ export default class ItemsPosted extends Component {
                 cardBtClicked: true
             })
             // the code above is about to make the card to expand
-
-            x.target.offsetParent.children[3].style.display = "grid"
+            
+            x.target.offsetParent.children[3].classList.add("active")
             // the additional data that comes in the cards
             x.target.offsetParent.lastChild.lastChild.style.display = "block"
             // show the close button
@@ -136,7 +136,7 @@ export default class ItemsPosted extends Component {
                         <img src={macbook} className="round" alt="img of this"/>
                         <div className="card-head">Mansão nova 1000m2 com piscina olímpica</div>
                         <div className="card-txt-body"><strong>Termina em:</strong> 40 min</div>
-                        <div id="cardAdditionalData" style={{display: "none"}}>
+                        <div id="cardAdditionalData">
                             <div className="card-txt-body"><strong>Inicio:</strong>  10/11/2019</div>
                             <div className="characs-holder">
                                 <div className="card-head">Características</div>
