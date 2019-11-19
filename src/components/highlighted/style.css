@@ -27,6 +27,7 @@
     line-height: 16px;
     margin: 10px 6%;
     word-spacing: 2px;
+    transition: ease-in-out 200ms;
 }
 
 .card-txt-body {

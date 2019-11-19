@@ -29,6 +29,7 @@
     width: 100%;
     height: 135px;
     object-fit: cover;
+    transition: 500ms ease-in-out 20ms;
 }
 
 
@@ -42,4 +43,52 @@
     margin-left: 193px;
     margin-top: -5px;
     transition: ease-in-out 300ms;
+}
+
+
+/* classes to be applied when card is clicked */
+
+.card .grownImage {
+    height: 250px !important;
+}
+
+.card.grown {
+    height: 700px !important;
+}
+
+#cardAdditionalData {
+    transition: 200ms ease-in-out 100ms;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#cardAdditionalData .card-txt-body {
+    margin-left: 12%;
+}
+
+#cardAdditionalData .characs-holder {
+    margin-top: 50px;
+    grid-column: 1;
+    grid-row: 2;
+    margin-left: 6%;
+}
+
+#cardAdditionalData .charac-info {
+    width: 30%;
+    font-size: 12px;
+    margin-left: 6%;
+}
+
+#cardAdditionalData .last-bid-info {
+    font-size: 13px;
+}
+
+.bidding-in-card .current-bidding-value,
+.bidding-in-card .last-bid-info {
+    margin-left: 6%;
+}
+
+.card-head.grown-head {
+    margin-top: 40px;
+    width: 60%;
 }

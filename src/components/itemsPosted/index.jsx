@@ -32,8 +32,13 @@ export default class ItemsPosted extends Component {
             this.setState({
                 cardBtClicked: false
             })
-            x.target.style.display = "none"
             // once the close button is clicked, the code above will reassign the original properties
+            x.target.offsetParent.firstChild.classList.remove("grownImage")
+            x.target.offsetParent.classList.remove("grown")
+            x.target.offsetParent.children[1].classList.remove("grown-head")
+            x.target.offsetParent.children[3].style.display = "none"
+            x.target.style.display = "none"
+
         }
         
     }
@@ -55,14 +60,24 @@ export default class ItemsPosted extends Component {
             Object.assign(card.style, {
                 zIndex: "3",
                 width: "80vw",
-                top: "-100px",
+                top: "-200px",
                 left: cardPos,
             });
             this.setState({
                 cardBtClicked: true
             })
-            x.target.offsetParent.lastChild.style.display = "block"
             // the code above is about to make the card to expand
+
+            x.target.offsetParent.children[3].style.display = "grid"
+            // the additional data that comes in the cards
+            x.target.offsetParent.lastChild.style.display = "block"
+            // show the close button
+            x.target.offsetParent.firstChild.classList.add("grownImage")
+            // expand card image
+            x.target.offsetParent.classList.add("grown")
+            // expand the card itself
+            x.target.offsetParent.children[1].classList.add("grown-head")
+            // adding margin to the card header title
         }
         
     }
@@ -116,6 +131,26 @@ export default class ItemsPosted extends Component {
                         <img src={macbook} className="round" alt="img of this"/>
                         <div className="card-head">Mansão nova 1000m2 com piscina olímpica</div>
                         <div className="card-txt-body"><strong>Termina em:</strong> 40 min</div>
+                        <div id="cardAdditionalData" style={{display: "none"}}>
+                            <div className="card-txt-body"><strong>Inicio:</strong>  10/11/2019</div>
+                            <div className="characs-holder">
+                                <div className="card-head">Características</div>
+                                <div className="charac-info">
+                                Condição: Novo
+                                Kilometragem: 1000
+                                Flex: Sim
+                                Categoria: Carro
+                                </div> 
+                            </div>
+                            <div className="bidding-in-card">
+                                <div className="card-head">Lance atual:</div>
+                                <div className="current-bidding-value">R$ 37.590,90</div>
+                                <div className="last-bid-info">
+                                    <div>14/11/2019 16:45</div>
+                                    <div>Usuário: Tarcizo</div>
+                                </div>
+                            </div>
+                        </div>
                         <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
                         <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
                     </div>
