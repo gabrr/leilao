@@ -22,7 +22,7 @@
 }
 
 #itemsPosted .card {
-    transition: cubic-bezier(.85, .53, .29, 1.06) 400ms;
+    transition: cubic-bezier(.73, .35, .23, .98) 400ms;
 }
 
 #itemsPosted .card img {
@@ -37,6 +37,9 @@
 #close-card-button {
     width: 20px;
     height: 20px;
+    display: none;
+    cursor: pointer;
     margin-left: 193px;
-    margin-top: -53px;
+    margin-top: -5px;
+    transition: ease-in-out 300ms;
 }

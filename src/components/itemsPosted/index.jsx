@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ap from "../../assets/apartamento-luxo.png"
 import ferrari from "../../assets/ferrarif12.png"
-import harley from "../../assets/harley.png"
+import harley from "../../assets/teslamodels.png"
 import house from "../../assets/casapiscina.png"
 import iphone from "../../assets/iphonexs.png"
 import macbook from "../../assets/macbook.png"
@@ -29,10 +29,11 @@ export default class ItemsPosted extends Component {
                 left: "0",
                 zIndex: "1"
             });
-            
             this.setState({
                 cardBtClicked: false
             })
+            x.target.style.display = "none"
+            // once the close button is clicked, the code above will reassign the original properties
         }
         
     }
@@ -46,24 +47,24 @@ export default class ItemsPosted extends Component {
             let percentWin = windWidth * 0.10;
             let cardPos = "";
 
-            if(percentCard > 15) {
+            if(percentCard) {
                 cardPos = `-${cardLeft-percentWin}px`;
             } else {
                 cardPos = `${cardLeft}px`;
             }
-    
-    
             Object.assign(card.style, {
-                width: "700px",
+                zIndex: "3",
+                width: "80vw",
                 top: "-100px",
                 left: cardPos,
-                zIndex: "3"
             });
-    
             this.setState({
                 cardBtClicked: true
             })
-        }        
+            x.target.offsetParent.lastChild.style.display = "block"
+            // the code above is about to make the card to expand
+        }
+        
     }
 
 
@@ -72,48 +73,58 @@ export default class ItemsPosted extends Component {
             <div id="itemsPosted" className="blur">
                 <div className="txt-head">Quase encerrando</div>
                 <div className="cards-grid">
-                    <div  style={{width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
+                    <div  style={{zIndex: 1, width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
                         <img src={ap} className="round" alt="img of this"/>
                         <div className="card-head">Apartamento mobiliado no litoral paulista</div>
                         <div className="card-txt-body"><strong>Termina em:</strong> 40 min</div>
                         <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
                         <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
                     </div>
-                    <div style={{width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
+                    <div style={{zIndex: 1, width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
                         <img src={harley} className="round" alt="img of this"/>
                         <div className="card-head">Moto Harley Davidson 2018 importada</div>
                         <div className="card-txt-body"><strong>Termina em:</strong> 40 min</div>
                         <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
                         <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
                     </div>
-                    <div style={{width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
+                    <div style={{zIndex: 1, width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
                         <img src={ferrari} className="round" alt="img of this"/>
                         <div className="card-head">Ferrari F12 nova com motor v12 usada apenas por um 1 ano</div>
                         <div className="card-txt-body"><strong>Termina em:</strong> 40 min</div>
                         <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
                         <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
                     </div>
-                    <div style={{width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
+                    <div style={{zIndex: 1, width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
                         <img src={house} className="round" alt="img of this"/>
                         <div className="card-head">Mansão nova 1000m2 com piscina olímpica</div>
                         <div className="card-txt-body"><strong>Termina em:</strong> 40 min</div>
                         <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
                         <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
                     </div>
-                    <div style={{width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
+                    <div style={{zIndex: 1, width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
                         <img src={iphone} className="round" alt="img of this"/>
                         <div className="card-head">Mansão nova 1000m2 com piscina olímpica</div>
                         <div className="card-txt-body"><strong>Termina em:</strong> 40 min</div>
                         <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
                         <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
                     </div>
-                    <div style={{width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
+
+
+
+
+                    <div style={{zIndex: 1, width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
                         <img src={macbook} className="round" alt="img of this"/>
                         <div className="card-head">Mansão nova 1000m2 com piscina olímpica</div>
                         <div className="card-txt-body"><strong>Termina em:</strong> 40 min</div>
                         <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
                         <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
                     </div>
+
+
+
+
+
+
                 </div>
                 <br/>
                 <br/>

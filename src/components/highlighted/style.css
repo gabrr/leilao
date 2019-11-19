@@ -12,6 +12,7 @@
     margin: 25px 5% 0 5%;
     padding-bottom: 20px;
     position: relative;
+    height: 345px;
 }
 
 #cards-holder .card img {
@@ -43,6 +44,7 @@
     font-size: 50%;
     font-weight: 600;
     margin: 20px auto;
+    cursor: pointer;
 }
 
 
