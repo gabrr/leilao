@@ -37,6 +37,8 @@ export default class ItemsPosted extends Component {
             x.target.offsetParent.classList.remove("grown")
             x.target.offsetParent.children[1].classList.remove("grown-head")
             x.target.offsetParent.children[3].style.display = "none"
+            x.target.offsetParent.lastChild.classList.remove("active")
+            x.target.offsetParent.lastChild.firstChild.classList.remove("active")
             x.target.style.display = "none"
 
         }
@@ -70,7 +72,7 @@ export default class ItemsPosted extends Component {
 
             x.target.offsetParent.children[3].style.display = "grid"
             // the additional data that comes in the cards
-            x.target.offsetParent.lastChild.style.display = "block"
+            x.target.offsetParent.lastChild.lastChild.style.display = "block"
             // show the close button
             x.target.offsetParent.firstChild.classList.add("grownImage")
             // expand card image
@@ -78,8 +80,11 @@ export default class ItemsPosted extends Component {
             // expand the card itself
             x.target.offsetParent.children[1].classList.add("grown-head")
             // adding margin to the card header title
+            x.target.offsetParent.lastChild.classList.add("active")
+            // display the buttons as a grid
+            x.target.offsetParent.lastChild.firstChild.classList.add("active")
+            // the button to bid with proper margins
         }
-        
     }
 
 
@@ -151,11 +156,21 @@ export default class ItemsPosted extends Component {
                                 </div>
                                 <div className="bidding-input-outer">
                                     <input className="round el2-cl" type="number" placeholder="Exemplo: 3000"/>
+                                    <div id="addition-sign">
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div className="users-bid">
+                                    <div className="card-head">Seu lance:</div>
+                                    <div className="txt-high">R$ 47.500,00</div>
                                 </div>
                             </div>
                         </div>
-                        <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
-                        <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
+                        <div className="cards-button">
+                            <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
+                            <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
+                        </div>
                     </div>
 
 
