@@ -64,8 +64,11 @@
     0% {
         opacity: 0;
     }
-    70% {
+    50% {
         opacity: 0;
+    }
+    60% {
+        opacity: 1;
     }
     100% {
         opacity: 1;
@@ -80,8 +83,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     animation-name: fadein;
-    animation-duration: 600ms;
-    animation-direction: alternate;
+    animation-duration: 1000ms;
     animation-timing-function: ease-in-out;
 }
 
@@ -98,12 +100,12 @@
 
 #cardAdditionalData .charac-info {
     width: 30%;
-    font-size: 12px;
+    font-size: 80%;
     margin-left: 6%;
 }
 
 #cardAdditionalData .last-bid-info {
-    font-size: 13px;
+    font-size: 80%;
 }
 
 .bidding-in-card .current-bidding-value,
@@ -203,6 +205,7 @@
 }
 
 .bid-button.active {
+    transition: top 600ms;
     margin-right: 0;
     font-size: 80%;
 }

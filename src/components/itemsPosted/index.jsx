@@ -12,11 +12,15 @@ export default class ItemsPosted extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            cardBtClicked: false
+            cardBtClicked: false,
+            inputValue: 0,
+            currentBid: 45000
         }
 
         this.cardClicked = this.cardClicked.bind(this)
         this.closingCard = this.closingCard.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+        this.biddingFormat = this.biddingFormat.bind(this)
     }
 
     closingCard(x) {
@@ -45,7 +49,27 @@ export default class ItemsPosted extends Component {
         
     }
 
+    handleChange(e) {
+        let value = e.target.value;
+        this.setState({
+            inputValue: value
+        })
+    }
+
+    biddingFormat(num) {
+        if(num) {
+            let sum = parseInt(num) + parseInt(this.state.currentBid)
+            sum = sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            return `R$ ${sum}`
+        }
+
+        let sum = this.state.currentBid.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return `R$ ${sum}`
+    }
+    
+
     cardClicked(x) {
+
         if(this.state.cardBtClicked === false) {
             let card = x.target.offsetParent;  
             let cardLeft = x.target.offsetParent.offsetLeft;
@@ -69,9 +93,15 @@ export default class ItemsPosted extends Component {
                 cardBtClicked: true
             })
             // the code above is about to make the card to expand
-            
-            x.target.offsetParent.children[3].classList.add("active")
-            // the additional data that comes in the cards
+            const xTarget = x.target
+
+            if(x.target.offsetParent.children[3]) {
+                setTimeout(() => {
+                    xTarget.offsetParent.children[3].classList.add("active")
+                    // the additional data that comes in the cards
+                }, 300)
+            }
+
             x.target.offsetParent.lastChild.lastChild.style.display = "block"
             // show the close button
             x.target.offsetParent.firstChild.classList.add("grownImage")
@@ -149,13 +179,13 @@ export default class ItemsPosted extends Component {
                             </div>
                             <div className="bidding-in-card">
                                 <div className="card-head">Lance atual:</div>
-                                <div className="current-bidding-value">R$ 37.590,90</div>
+                                <div className="current-bidding-value">{this.biddingFormat()}</div>
                                 <div className="last-bid-info">
                                     <div>14/11/2019 16:45</div>
                                     <div>Usuário: Tarcizo</div>
                                 </div>
                                 <div className="bidding-input-outer">
-                                    <input className="round el2-cl" type="number" placeholder="Exemplo: 3000"/>
+                                    <input onChange={this.handleChange} className="round el2-cl" type="number" placeholder="Exemplo: 3000"/>
                                     <div id="addition-sign">
                                         <div></div>
                                         <div></div>
@@ -163,7 +193,7 @@ export default class ItemsPosted extends Component {
                                 </div>
                                 <div className="users-bid">
                                     <div className="card-head">Seu lance:</div>
-                                    <div className="txt-high">R$ 47.500,00</div>
+                                    <div className="txt-high">{this.biddingFormat(this.state.inputValue)}</div>
                                 </div>
                             </div>
                         </div>
