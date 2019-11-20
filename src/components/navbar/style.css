@@ -107,6 +107,12 @@ p {
     text-align: left;
 }
 
+a {
+    text-decoration: none;
+    color: #f2f2f2;
+    font-size: 100%;
+}
+
 
 /* hide items for desktop version */
 

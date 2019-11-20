@@ -10,7 +10,7 @@ export default class Highlighted extends Component {
         return (
             <div id="highlighted">
             <div id="cards-holder" className="blur">
-                <div className="txt-head">Leilões em destaque</div>
+                <div className="txt-head">Em destaque</div>
                 <div className="cards-grid">
                     <div className="card el-cl round shadow">
                         <img src={ap} className="round" alt="img of this"/>
