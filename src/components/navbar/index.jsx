@@ -19,36 +19,92 @@ export default class Navbar extends Component {
     }
 
     navbarPointer() {
+        var currPage = document.URL.split("/")[3];
+        var navItemNum = 0;
+        //getting the url and setting the index that the pointer must rest at
+
+        switch(currPage) {
+            case "":
+                navItemNum = 0
+                break;
+            case "publish":
+                navItemNum = 1
+                break;
+            case "about":
+                navItemNum = 2
+                break;
+            case "contact":
+                navItemNum = 3
+                break;
+            default:
+                navItemNum = 0;
+        }
+
         let elementsPos = document.getElementsByClassName("navigation")[0].childNodes;
         let pointer = document.querySelector(".page-indicator");
-        let pos = elementsPos[0].offsetLeft;
-        let width = elementsPos[0].offsetWidth
+        let pos = elementsPos[navItemNum].offsetLeft;
+        let width = elementsPos[navItemNum].offsetWidth
         let pPos = (width / 2.5) + pos;
         pointer.style.left = pPos + "px";
+        // calculating the position of the pointer based on the child size and position relatively to the left
         
         elementsPos.forEach(li => {
             li.addEventListener("mouseenter", () => {
+                currPage = document.URL.split("/")[3];
+                switch(currPage) {
+                    case "":
+                        navItemNum = 0
+                        break;
+                    case "publish":
+                        navItemNum = 1
+                        break;
+                    case "about":
+                        navItemNum = 2
+                        break;
+                    case "contact":
+                        navItemNum = 3
+                        break;
+                    default:
+                        navItemNum = 0;
+                }
+                // putting inside the event listener so it happens everytime the user interacts with it
+
                 pos = li.offsetLeft;
                 width = li.offsetWidth;
                 pPos = (width / 2.5) + pos;
                 pointer.style.left = pPos + "px";
+
             });
             li.addEventListener("mouseleave", () => {
-                pos = elementsPos[0].offsetLeft;
-                width = elementsPos[0].offsetWidth
+                currPage = document.URL.split("/")[3];
+                switch(currPage) {
+                    case "":
+                        navItemNum = 0
+                        break;
+                    case "publish":
+                        navItemNum = 1
+                        break;
+                    case "about":
+                        navItemNum = 2
+                        break;
+                    case "contact":
+                        navItemNum = 3
+                        break;
+                    default:
+                        navItemNum = 0;
+                }
+
+                pos = elementsPos[navItemNum].offsetLeft;
+                width = elementsPos[navItemNum].offsetWidth
                 pPos = (width / 2.5) + pos;
                 pointer.style.left = pPos + "px";
+
             });  
         })
     }
 
-    bluringBg() {
-        
-    }
-
     componentDidMount(){
         this.navbarPointer()
-        this.bluringBg()
         this.rmBlur()
     }
 

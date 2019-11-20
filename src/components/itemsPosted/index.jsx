@@ -1,26 +1,26 @@
 import React, { Component } from 'react'
-import ap from "../../assets/apartamento-luxo.png"
-import ferrari from "../../assets/ferrarif12.png"
-import harley from "../../assets/teslamodels.png"
-import house from "../../assets/casapiscina.png"
-import iphone from "../../assets/iphonexs.png"
-import macbook from "../../assets/macbook.png"
 import "./clickedCards.css"
 import "./style.css"
+import store from "../../store"
 
 export default class ItemsPosted extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            cardBtClicked: false,
-            inputValue: 0,
-            currentBid: 45000
+            cardBtClicked: false
         }
 
         this.cardClicked = this.cardClicked.bind(this)
         this.closingCard = this.closingCard.bind(this)
         // this.handleChange = this.handleChange.bind(this)
         // this.biddingFormat = this.biddingFormat.bind(this)
+    }
+
+    componentDidMount() {
+        this.setState({
+            published: store.getState().published
+        })
+
     }
 
     closingCard(x) {
@@ -129,91 +129,49 @@ export default class ItemsPosted extends Component {
             <div id="itemsPosted" className="blur">
                 <div className="txt-head">Quase encerrando</div>
                 <div className="cards-grid">
-                    <div  style={{zIndex: 1, width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
-                        <img src={ap} className="round" alt="img of this"/>
-                        <div className="card-head">Apartamento mobiliado no litoral paulista</div>
-                        <div className="card-txt-body"><strong>Termina em:</strong> 40 min</div>
-                        <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
-                        <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
-                    </div>
-                    <div style={{zIndex: 1, width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
-                        <img src={harley} className="round" alt="img of this"/>
-                        <div className="card-head">Moto Harley Davidson 2018 importada</div>
-                        <div className="card-txt-body"><strong>Termina em:</strong> 40 min</div>
-                        <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
-                        <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
-                    </div>
-                    <div style={{zIndex: 1, width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
-                        <img src={ferrari} className="round" alt="img of this"/>
-                        <div className="card-head">Ferrari F12 nova com motor v12 usada apenas por um 1 ano</div>
-                        <div className="card-txt-body"><strong>Termina em:</strong> 40 min</div>
-                        <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
-                        <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
-                    </div>
-                    <div style={{zIndex: 1, width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
-                        <img src={house} className="round" alt="img of this"/>
-                        <div className="card-head">Mansão nova 1000m2 com piscina olímpica</div>
-                        <div className="card-txt-body"><strong>Termina em:</strong> 40 min</div>
-                        <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
-                        <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
-                    </div>
-                    <div style={{zIndex: 1, width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
-                        <img src={iphone} className="round" alt="img of this"/>
-                        <div className="card-head">Mansão nova 1000m2 com piscina olímpica</div>
-                        <div className="card-txt-body"><strong>Termina em:</strong> 40 min</div>
-                        <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
-                        <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
-                    </div>
-
-
-
-
-                    <div style={{zIndex: 1, width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
-                        <img src={macbook} className="round" alt="img of this"/>
-                        <div className="card-head">Mansão nova 1000m2 com piscina olímpica</div>
-                        <div className="card-txt-body"><strong>Termina em:</strong> 40 min</div>
-                        <div className="card-txt-body"><strong>Inicio:</strong>  10/11/2019</div>
-                        <div id="cardAdditionalData">
-                            <div className="characs-holder">
-                                <div className="card-head">Características</div>
-                                <div className="charac-info">
-                                Condição: Novo
-                                Kilometragem: 1000
-                                Flex: Sim
-                                Categoria: Carro
-                                </div> 
-                            </div>
-                            <div className="bidding-in-card">
-                                <div className="card-head">Lance atual:</div>
-                                <div className="current-bidding-value">R$ 2.800.000</div>
-                                <div className="last-bid-info">
-                                    <div>14/11/2019 16:45</div>
-                                    <div>Usuário: Tarcizo</div>
-                                </div>
-                                <div className="bidding-input-outer">
-                                    <input id="biddingInput" className="round el2-cl" type="number" placeholder="Mínimo: 3000"/>
-                                    <div id="addition-sign">
-                                        <div></div>
-                                        <div></div>
+                    {
+                        store.getState().published.map(card => {
+                            return (
+                                <div style={{zIndex: 1, width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
+                                <img src={card.image} className="round" alt="img of this"/>
+                                    <div className="card-head">{card.title}</div>
+                                    <div className="card-txt-body"><strong>Termina em:</strong>{card.finishingDate}</div>
+                                    <div className="card-txt-body"><strong>Inicio:</strong>{card.startDate}</div>
+                                        <div id="cardAdditionalData">
+                                            <div className="characs-holder">
+                                                <div className="card-head">Características</div>
+                                                <div className="charac-info">
+                                                {card.characs}
+                                                </div> 
+                                            </div>
+                                            <div className="bidding-in-card">
+                                                <div className="card-head">Lance atual:</div>
+                                                <div className="current-bidding-value">R$ {card.currentBid}</div>
+                                                <div className="last-bid-info">
+                                                    <div>{card.lastBidTime}</div>
+                                                    <div>Usuário: {card.userBidded}</div>
+                                                </div>
+                                                <div className="bidding-input-outer">
+                                                    <input id="biddingInput" className="round el2-cl" type="number" placeholder={`Mínimo: ${card.minBid}`}/>
+                                                    <div id="addition-sign">
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                                <div className="users-bid">
+                                                    <div className="card-head">Seu lance:</div>
+                                                    <div className="txt-high">R$ 2.900.000</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="cards-button">
+                                            <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
+                                            <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="users-bid">
-                                    <div className="card-head">Seu lance:</div>
-                                    <div className="txt-high">R$ 2.900.000</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="cards-button">
-                            <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
-                            <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
-                        </div>
-                    </div>
-
-
-
-
-
-
+                            )
+                        })
+                    }
                 </div>
                 <br/>
                 <br/>

@@ -1,5 +1,7 @@
 import React from 'react';
 import "./App.css"
+import { Provider } from 'react-redux';
+import store from "./store";
 import Navbar from "./components/navbar";
 import Highlighted from "./components/highlighted"
 import Categories from "./components/categories"
@@ -12,32 +14,33 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Navbar />
-        <Switch>
-          <Route exact path="/">
-            <Highlighted />
-            <Categories/>
-            <ItemsPoted />
-          </Route>
-          <Route path="/publish">
-            <PublishCard />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/contact">
-            <Contact /> 
-          </Route>
-        </Switch>
-        <Footer />
-      </div>
+      <Provider store={store}>
+        <div className="App">
+          <Navbar />
+          <Switch>
+            <Route exact path="/">
+              <Highlighted />
+              <Categories/>
+              <ItemsPoted />
+            </Route>
+            <Route path="/publish">
+              <PublishCard />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/contact">
+              <Contact /> 
+            </Route>
+          </Switch>
+          <Footer />
+        </div>
+      </Provider>
     </Router>
   );
 }
