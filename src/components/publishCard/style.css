@@ -1,13 +1,13 @@
 #publishCard .card {
-    top: 200px;
-    left: 50%;
-    margin: 0 auto 130px;
+    top: 70px;
+    left: 45%;
+    margin-bottom: 40px;
     transform: translateX(-50%);
-    position: absolute;
     z-index: 2;
     max-width: 800px;
     width: 90%;
-    padding-bottom: 100px;
+    padding-bottom: 70px;
+    height: auto;
 }
 
 .img-uploader {
