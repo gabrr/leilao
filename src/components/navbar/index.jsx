@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
-import userAvatar from "../../svg/user.png"
 import "./style.css";
+import userAvatar from "../../svg/user.png"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 export default class Navbar extends Component {
     constructor(props) {
@@ -43,6 +49,18 @@ export default class Navbar extends Component {
     componentDidMount(){
         this.navbarPointer()
         this.bluringBg()
+        this.rmBlur()
+    }
+
+    // removing blur when click in links
+    rmBlur() {
+        let mobile = document.getElementsByClassName("mobile-links")[0].childNodes
+        mobile.forEach(li => {
+            li.addEventListener("click", () => {
+                this.menuToggler()
+            })
+        })
+        
     }
 
     menuToggler() {
@@ -65,10 +83,7 @@ export default class Navbar extends Component {
         } else {
             mobileNavLink.classList.remove("display");
         }
-        
-
         // to show the links upon the navigation
-
     }
 
     render() {
@@ -90,10 +105,10 @@ export default class Navbar extends Component {
                 </div>
                 <nav id="navbar">
                     <ul className="navigation txt-body blur">
-                        <li>Início</li>
-                        <li>Leiloar algo</li>
-                        <li>Sobre nós</li>
-                        <li>Contato</li>
+                        <li><Link to="/">Início</Link></li>
+                        <li><Link to="/publish">Leiloar algo</Link></li>
+                        <li><Link to="/about">Sobre nós</Link></li>
+                        <li><Link to="/contact">Contato</Link></li>
                         <div className="page-indicator circle high-cl"></div>
                     </ul>
                 </nav>
@@ -110,9 +125,10 @@ export default class Navbar extends Component {
                         </div>
                     </div>
                     <ul className="mobile-links">
-                        <li>Leiloar algo</li>
-                        <li>Sobre nós</li>
-                        <li>Contato</li>
+                        <li><Link to="/">Início</Link></li>
+                        <li><Link to="/publish">Leiloar algo</Link></li>
+                        <li><Link to="/about">Sobre nós</Link></li>
+                        <li><Link to="/contact">Contato</Link></li>
                     </ul>
                 </div>
             </React.Fragment>
