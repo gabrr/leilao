@@ -60,7 +60,6 @@ export default class Navbar extends Component {
                 this.menuToggler()
             })
         })
-        
     }
 
     menuToggler() {
