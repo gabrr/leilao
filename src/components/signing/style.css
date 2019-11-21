@@ -58,3 +58,17 @@
     text-align: left;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 768px) {
+    .signing-card {
+        width: 85%;
+        margin-bottom: 100px;
+        top: 30px
+    }
+    .signing-card .link {
+        margin-left: 15%;
+    }
+    .signing-card .card-button {
+        margin-left: 35%;
+    }
+}
