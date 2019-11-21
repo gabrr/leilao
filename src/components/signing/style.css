@@ -11,9 +11,10 @@
 
 .signing-card {
     width: 50vw;
+    max-width: 380px;
     position: fixed;
     z-index: 6;
-    height: 350px;
+    height: auto;
     left: 50%;
     top: 200px;
     margin: 0 !important;
@@ -35,4 +36,25 @@
     height: 30px;
     margin: 10px auto;
     padding: 0 12px;
+    color: #f2f2f2;
+}
+
+.signing-card .cards-button {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.signing-card .card-button {
+    margin-left: 50%;
+    font-size: 80%;
+    min-width: 60px;
+    cursor: pointer;
+}
+
+.signing-card .link {
+    font-size: 80%;
+    margin-top: 50px;
+    margin-left: 15px;
+    text-align: left;
+    cursor: pointer;
 }

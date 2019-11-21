@@ -158,8 +158,8 @@ export default class Navbar extends Component {
                         </input>
                     </div>
                     <div className="login-area">
-                        <div className="register txt-body link">Cadastrar</div>
-                        <div className="login txt-body link" value={"signin"} onClick={this.sign}>Entrar</div>
+                        <div className="register txt-body link" onClick={this.sign}>Cadastrar</div>
+                        <div className="login txt-body link" onClick={this.sign}>Entrar</div>
                         <div className="avatar">
                             <img src={userAvatar} alt={"user avatar"}/>
                         </div>

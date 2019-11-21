@@ -1,3 +1,9 @@
+#About {
+    animation-name: changePage;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
+}
+
 .presentation {
     max-width: 700px;
     width: 90%;
