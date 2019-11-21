@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import Signing from "../signing"
 import "./style.css";
 import userAvatar from "../../svg/user.png"
 import {
@@ -141,9 +143,14 @@ export default class Navbar extends Component {
         // to show the links upon the navigation
     }
 
+    sign(x) {
+        ReactDOM.render(<Signing type={x.target} />, document.getElementById("card-to-sign"))
+    }
+
     render() {
         return (
             <React.Fragment>
+                <div id="card-to-sign"></div>
                 <div id="bar" className="blur">
                     <div className="logo txt-head">gabrr Leilões</div>
                     <div className="search-area shadow">
@@ -151,8 +158,8 @@ export default class Navbar extends Component {
                         </input>
                     </div>
                     <div className="login-area">
-                        <div className="register txt-body link">Cadastrar</div>
-                        <div className="login txt-body link">Entrar</div>
+                        <div className="register txt-body link" onClick={this.sign}>Cadastrar</div>
+                        <div className="login txt-body link" onClick={this.sign}>Entrar</div>
                         <div className="avatar">
                             <img src={userAvatar} alt={"user avatar"}/>
                         </div>
