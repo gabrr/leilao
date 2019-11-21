@@ -1,16 +1,51 @@
 import { createStore } from "redux";
 import ap from "../assets/apartamento-luxo.png"
-// import ferrari from "../../assets/ferrarif12.png"
-// import harley from "../../assets/teslamodels.png"
-// import house from "../../assets/casapiscina.png"
-// import iphone from "../../assets/iphonexs.png"
-// import macbook from "../../assets/macbook.png"
+import ferrari from "../assets/ferrarif12.png"
+import harley from "../assets/teslamodels.png"
+import house from "../assets/casapiscina.png"
+import iphone from "../assets/iphonexs.png"
+import macbook from "../assets/macbook.png"
+import tv from "../assets/aoctv.png"
+import bros from "../assets/bros.png"
+import truck from "../assets/caminhao-usado.png"
+import usedcar from "../assets/carro-usado.png"
+import house2 from "../assets/casa.png"
+import ferraruItaly from "../assets/ferraliitaly.png"
+import galaxy from "../assets/galaxys10.png"
+import pagani from "../assets/pagani.png"
+import porsche from "../assets/porsche-eletric.png"
+import tv65 from "../assets/tv65.png"
+import motor from "../assets/moto.png"
+
+
 
 const INITIAL_STATE = {
     published: [{
             image: ap,
-            title: "Mansão nova 1000m2 com piscina olímpica",
-            finishingDate: 40,
+            title: "Apartamento nova 1000m2 com piscina olímpica",
+            finishingDate: 4000,
+            startDate: "10/11/2019",
+            characs: `Condição: Novo
+            Kilometragem: 1000
+            Flex: Sim
+            Categoria: Carro`,
+            details: {
+                category: "housing",
+                condition: "new",
+                rooms: 4,
+                suits: 2,
+            },
+            currentBid: 1800000,
+            lastBidTime: "14/11/2019 16:45",
+            userBidded: "Tarcizo",
+            minBid: 5000,
+            Owner: "gabrr",
+            highlighted: false
+        },
+        {
+            image: ferrari,
+            title: "Ferrari nova 1000m2 com piscina olímpica",
+            finishindDate: 1000,
             startDate: "10/11/2019",
             characs: `Condição: Novo
             Kilometragem: 1000
@@ -20,10 +55,11 @@ const INITIAL_STATE = {
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
             minBid: 3000,
-            Owner: "gabrr"
+            Owner: "gabrr",
+            highlighted: false
         },
         {
-            image: ap,
+            image: harley,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
             startDate: "10/11/2019",
@@ -35,10 +71,11 @@ const INITIAL_STATE = {
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
             minBid: 3000,
-            Owner: "gabrr"
+            Owner: "gabrr",
+            highlighted: false
         },
         {
-            image: ap,
+            image: house,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
             startDate: "10/11/2019",
@@ -50,10 +87,11 @@ const INITIAL_STATE = {
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
             minBid: 3000,
-            Owner: "gabrr"
+            Owner: "gabrr",
+            highlighted: false
         },
         {
-            image: ap,
+            image: iphone,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
             startDate: "10/11/2019",
@@ -65,10 +103,12 @@ const INITIAL_STATE = {
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
             minBid: 3000,
-            Owner: "gabrr"
+            Owner: "gabrr",
+            highlighted: false
+
         },
         {
-            image: ap,
+            image: macbook,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
             startDate: "10/11/2019",
@@ -80,10 +120,11 @@ const INITIAL_STATE = {
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
             minBid: 3000,
-            Owner: "gabrr"
+            Owner: "gabrr",
+            highlighted: false
         },
         {
-            image: ap,
+            image: tv,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
             startDate: "10/11/2019",
@@ -95,10 +136,11 @@ const INITIAL_STATE = {
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
             minBid: 3000,
-            Owner: "gabrr"
+            Owner: "gabrr",
+            highlighted: false
         },
         {
-            image: ap,
+            image: bros,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
             startDate: "10/11/2019",
@@ -110,23 +152,167 @@ const INITIAL_STATE = {
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
             minBid: 3000,
-            Owner: "gabrr"
+            Owner: "gabrr",
+            highlighted: false
         },
+        {
+            image: truck,
+            title: "Mansão nova 1000m2 com piscina olímpica",
+            finishindDate: 40,
+            startDate: "10/11/2019",
+            characs: `Condição: Novo
+            Kilometragem: 1000
+            Flex: Sim
+            Categoria: Carro`,
+            currentBid: 2800000,
+            lastBidTime: "14/11/2019 16:45",
+            userBidded: "Tarcizo",
+            minBid: 3000,
+            Owner: "gabrr",
+            highlighted: false
+        },
+        {
+            image: usedcar,
+            title: "Mansão nova 1000m2 com piscina olímpica",
+            finishindDate: 40,
+            startDate: "10/11/2019",
+            characs: `Condição: Novo
+            Kilometragem: 1000
+            Flex: Sim
+            Categoria: Carro`,
+            currentBid: 2800000,
+            lastBidTime: "14/11/2019 16:45",
+            userBidded: "Tarcizo",
+            minBid: 3000,
+            Owner: "gabrr",
+            highlighted: false
+        },
+        {
+            image: house2,
+            title: "Mansão nova 1000m2 com piscina olímpica",
+            finishindDate: 40,
+            startDate: "10/11/2019",
+            characs: `Condição: Novo
+            Kilometragem: 1000
+            Flex: Sim
+            Categoria: Carro`,
+            currentBid: 2800000,
+            lastBidTime: "14/11/2019 16:45",
+            userBidded: "Tarcizo",
+            minBid: 3000,
+            Owner: "gabrr",
+            highlighted: true
+        },
+        {
+            image: ferraruItaly,
+            title: "Mansão nova 1000m2 com piscina olímpica",
+            finishindDate: 40,
+            startDate: "10/11/2019",
+            characs: `Condição: Novo
+            Kilometragem: 1000
+            Flex: Sim
+            Categoria: Carro`,
+            currentBid: 2800000,
+            lastBidTime: "14/11/2019 16:45",
+            userBidded: "Tarcizo",
+            minBid: 3000,
+            Owner: "gabrr",
+            highlighted: true
+        },
+        {
+            image: galaxy,
+            title: "Mansão nova 1000m2 com piscina olímpica",
+            finishindDate: 40,
+            startDate: "10/11/2019",
+            characs: `Condição: Novo
+            Kilometragem: 1000
+            Flex: Sim
+            Categoria: Carro`,
+            currentBid: 2800000,
+            lastBidTime: "14/11/2019 16:45",
+            userBidded: "Tarcizo",
+            minBid: 3000,
+            Owner: "gabrr",
+            highlighted: false
+        },
+        {
+            image: pagani,
+            title: "Mansão nova 1000m2 com piscina olímpica",
+            finishindDate: 40,
+            startDate: "10/11/2019",
+            characs: `Condição: Novo
+            Kilometragem: 1000
+            Flex: Sim
+            Categoria: Carro`,
+            currentBid: 2800000,
+            lastBidTime: "14/11/2019 16:45",
+            userBidded: "Tarcizo",
+            minBid: 3000,
+            Owner: "gabrr",
+            highlighted: true
+        },
+        {
+            image: porsche,
+            title: "Mansão nova 1000m2 com piscina olímpica",
+            finishindDate: 40,
+            startDate: "10/11/2019",
+            characs: `Condição: Novo
+            Kilometragem: 1000
+            Flex: Sim
+            Categoria: Carro`,
+            currentBid: 2800000,
+            lastBidTime: "14/11/2019 16:45",
+            userBidded: "Tarcizo",
+            minBid: 3000,
+            Owner: "gabrr",
+            highlighted: true
+        },
+        {
+            image: tv65,
+            title: "Mansão nova 1000m2 com piscina olímpica",
+            finishindDate: 40,
+            startDate: "10/11/2019",
+            characs: `Condição: Novo
+            Kilometragem: 1000
+            Flex: Sim
+            Categoria: Carro`,
+            currentBid: 2800000,
+            lastBidTime: "14/11/2019 16:45",
+            userBidded: "Tarcizo",
+            minBid: 3000,
+            Owner: "gabrr",
+            highlighted: false
+        },
+        {
+            image: motor,
+            title: "Mansão nova 1000m2 com piscina olímpica",
+            finishindDate: 40,
+            startDate: "10/11/2019",
+            characs: `Condição: Novo
+            Kilometragem: 1000
+            Flex: Sim
+            Categoria: Carro`,
+            currentBid: 2800000,
+            lastBidTime: "14/11/2019 16:45",
+            userBidded: "Tarcizo",
+            minBid: 3000,
+            Owner: "gabrr",
+            highlighted: false
+        }
     ]
 };
 
 
-function themeReducer(state = INITIAL_STATE, action) {
+function funcReducer(state = INITIAL_STATE, action) {
     switch (action.type) {
         case "ADD":
-            console.log(true)
-            return {...state, teste: action.data }
+            return {...state, funcs: action.func }
         default:
             return state;
     }
 
 }
 
-const store = createStore(themeReducer);
+const store = createStore(funcReducer);
 
 export default store;
