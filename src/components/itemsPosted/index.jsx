@@ -44,7 +44,8 @@ export default class ItemsPosted extends Component {
             x.target.offsetParent.firstChild.classList.remove("grownImage")
             x.target.offsetParent.classList.remove("grown")
             x.target.offsetParent.children[1].classList.remove("grown-head")
-            x.target.offsetParent.children[4].classList.remove("active")
+            x.target.offsetParent.children[4].style.display = "none"
+            x.target.offsetParent.children[5].classList.remove("active")
             x.target.offsetParent.lastChild.classList.remove("active")
             x.target.offsetParent.lastChild.firstChild.classList.remove("active")
             x.target.style.display = "none"
@@ -90,21 +91,31 @@ export default class ItemsPosted extends Component {
             } else {
                 cardPos = `${cardLeft}px`;
             }
-            Object.assign(card.style, {
-                zIndex: "3",
-                width: "80vw",
-                top: "-200px",
-                left: cardPos,
-            });
+
+            if(window.innerWidth < 768) {
+                Object.assign(card.style, {
+                    zIndex: "3",
+                    width: "80vw",
+                    top: "10px",
+                    left: cardPos,
+                });
+            } else {
+                Object.assign(card.style, {
+                    zIndex: "3",
+                    width: "80vw",
+                    top: "-200px",
+                    left: cardPos,
+                });
+            }
             this.setState({
                 cardBtClicked: true
             })
             // the code above is about to make the card to expand
             const xTarget = x.target
 
-            if(x.target.offsetParent.children[4]) {
+            if(x.target.offsetParent.children[5]) {
                 setTimeout(() => {
-                    xTarget.offsetParent.children[4].classList.add("active")
+                    xTarget.offsetParent.children[5].classList.add("active")
                     // the additional data that comes in the cards
                 }, 300)
             }
@@ -117,6 +128,8 @@ export default class ItemsPosted extends Component {
             // expand the card itself
             x.target.offsetParent.children[1].classList.add("grown-head")
             // adding margin to the card header title
+            x.target.offsetParent.children[4].style.display = "block"
+            // showing the owner
             x.target.offsetParent.lastChild.classList.add("active")
             // display the buttons as a grid
             x.target.offsetParent.lastChild.firstChild.classList.add("active")
@@ -136,8 +149,9 @@ export default class ItemsPosted extends Component {
                                 <div style={{zIndex: 1, width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
                                 <img src={card.image} className="round" alt="img of this"/>
                                     <div className="card-head">{card.title}</div>
-                                    <div className="card-txt-body"><strong>Termina em:</strong>{card.finishingDate}</div>
-                                    <div className="card-txt-body"><strong>Inicio:</strong>{card.startDate}</div>
+                                    <div className="card-txt-body"><strong>Termina em: </strong>{card.finishingDate}</div>
+                                    <div className="card-txt-body"><strong>Inicio: </strong>{card.startDate}</div>
+                                    <div className="card-txt-body" style={{display: "none"}}><strong>Proprietário: </strong>{card.Owner}</div>
                                         <div id="cardAdditionalData">
                                             <div className="characs-holder">
                                                 <div className="card-head">Características</div>

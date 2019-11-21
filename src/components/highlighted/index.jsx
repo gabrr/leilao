@@ -40,8 +40,9 @@ export default class Highlighted extends Component {
                             <div style={{zIndex: 1, width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
                             <img src={card.image} className="round" alt="img of this"/>
                             <div className="card-head">{card.title}</div>
-                            <div className="card-txt-body"><strong>Termina em:</strong>{card.finishingDate}</div>
-                            <div className="card-txt-body"><strong>Inicio:</strong>{card.startDate}</div>
+                            <div className="card-txt-body"><strong>Termina em:  </strong>{card.finishingDate}</div>
+                            <div className="card-txt-body"><strong>Inicio: </strong>{card.startDate}</div>
+                            <div className="card-txt-body" style={{display: "none"}}><strong>Proprietário: </strong>{card.Owner}</div>
                                 <div id="cardAdditionalData">
                                     <div className="characs-holder">
                                         <div className="card-head">Características</div>
