@@ -1,0 +1,38 @@
+@keyframes signShowing {
+    from {
+        opacity: 0;
+        box-shadow: none;
+    }
+    to {
+        opacity: 1;
+        box-shadow: box-shadow ease-in-out 800ms;
+    }
+}
+
+.signing-card {
+    width: 50vw;
+    position: fixed;
+    z-index: 6;
+    height: 350px;
+    left: 50%;
+    top: 200px;
+    margin: 0 !important;
+    transform: translateX(-50%);
+    text-align: center;
+    animation-name: signShowing;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    box-shadow: 0 0 10px 100vh rgba(0, 0, 0, 0.4);
+}
+
+.signing-card h1 {
+    margin: 30px auto;
+    font-size: 150%;
+}
+
+.signing-card input {
+    width: calc(80% - 24px);
+    height: 30px;
+    margin: 10px auto;
+    padding: 0 12px;
+}
