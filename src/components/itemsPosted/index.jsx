@@ -75,9 +75,16 @@ export default class ItemsPosted extends Component {
     //     let sum = this.state.currentBid.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     //     return `R$ ${sum}`
     // }
-    
+
+    handlingData(docId) {
+        console.log(docId)
+
+        // manage the data that will go to the cards
+    }
+
 
     cardClicked(x) {
+        this.handlingData(x.target.id);
         if(this.state.cardBtClicked === false) {
             let card = x.target.offsetParent;  
             let cardLeft = x.target.offsetParent.offsetLeft;
@@ -160,7 +167,7 @@ export default class ItemsPosted extends Component {
                                                 </div> 
                                             </div>
                                             <div className="bidding-in-card">
-                                                <div className="card-head">Ultimo lance:</div>
+                                                <div className="card-head">Último lance:</div>
                                                 <div className="current-bidding-value">R$ {card.currentBid}</div>
                                                 <div className="last-bid-info">
                                                     <div>{card.lastBidTime}</div>
@@ -180,7 +187,7 @@ export default class ItemsPosted extends Component {
                                             </div>
                                         </div>
                                         <div className="cards-button">
-                                            <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
+                                            <div className="card-button bid-button" id={card.id} onClick={this.cardClicked}>Dar lance</div>
                                             <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
                                         </div>
                                     </div>

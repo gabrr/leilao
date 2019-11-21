@@ -10,6 +10,8 @@ export default class Highlighted extends Component {
             highlighted: [{}],
             cardFunctions: null
         }
+
+        this.cardClicked = this.cardClicked.bind(this)
     }
 
     cardClicked(x) {
@@ -51,7 +53,7 @@ export default class Highlighted extends Component {
                                         </div> 
                                     </div>
                                     <div className="bidding-in-card">
-                                        <div className="card-head">Ultimo lance:</div>
+                                        <div className="card-head">Último lance:</div>
                                         <div className="current-bidding-value">R$ {card.currentBid}</div>
                                         <div className="last-bid-info">
                                             <div>{card.lastBidTime}</div>
@@ -71,7 +73,7 @@ export default class Highlighted extends Component {
                                     </div>
                                 </div>
                                 <div className="cards-button">
-                                    <div className="card-button bid-button" onClick={this.cardClicked}>Dar lance</div>
+                                    <div className="card-button bid-button"  id={card.id} onClick={this.cardClicked}>Dar lance</div>
                                     <div id="close-card-button" className="link" onClick={this.closingCard}>Cancel</div>
                                 </div>
                             </div>

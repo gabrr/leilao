@@ -21,6 +21,7 @@ import motor from "../assets/moto.png"
 
 const INITIAL_STATE = {
     published: [{
+            id: "2019112214001",
             image: ap,
             title: "Apartamento nova 1000m2 com piscina olímpica",
             finishingDate: 4000,
@@ -43,6 +44,7 @@ const INITIAL_STATE = {
             highlighted: false
         },
         {
+            id: "2019112214002",
             image: ferrari,
             title: "Ferrari nova 1000m2 com piscina olímpica",
             finishindDate: 1000,
@@ -59,6 +61,7 @@ const INITIAL_STATE = {
             highlighted: false
         },
         {
+            id: "2019112214003",
             image: harley,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
@@ -75,6 +78,7 @@ const INITIAL_STATE = {
             highlighted: false
         },
         {
+            id: "2019112214004",
             image: house,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
@@ -91,6 +95,7 @@ const INITIAL_STATE = {
             highlighted: false
         },
         {
+            id: "2019112214005",
             image: iphone,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
@@ -108,6 +113,7 @@ const INITIAL_STATE = {
 
         },
         {
+            id: "2019112214006",
             image: macbook,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
@@ -124,6 +130,7 @@ const INITIAL_STATE = {
             highlighted: false
         },
         {
+            id: "2019112214007",
             image: tv,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
@@ -140,6 +147,7 @@ const INITIAL_STATE = {
             highlighted: false
         },
         {
+            id: "2019112214008",
             image: bros,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
@@ -156,6 +164,7 @@ const INITIAL_STATE = {
             highlighted: false
         },
         {
+            id: "2019112214009",
             image: truck,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
@@ -172,6 +181,7 @@ const INITIAL_STATE = {
             highlighted: false
         },
         {
+            id: "20191122130010",
             image: usedcar,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
@@ -188,6 +198,7 @@ const INITIAL_STATE = {
             highlighted: false
         },
         {
+            id: "20191122130011",
             image: house2,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
@@ -204,6 +215,7 @@ const INITIAL_STATE = {
             highlighted: true
         },
         {
+            id: "20191122130012",
             image: ferraruItaly,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
@@ -220,6 +232,7 @@ const INITIAL_STATE = {
             highlighted: true
         },
         {
+            id: "20191122130013",
             image: galaxy,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
@@ -236,6 +249,7 @@ const INITIAL_STATE = {
             highlighted: false
         },
         {
+            id: "20191122130014",
             image: pagani,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
@@ -252,6 +266,7 @@ const INITIAL_STATE = {
             highlighted: true
         },
         {
+            id: "20191122130015",
             image: porsche,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
@@ -268,6 +283,7 @@ const INITIAL_STATE = {
             highlighted: true
         },
         {
+            id: "20191122130016",
             image: tv65,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
@@ -284,6 +300,7 @@ const INITIAL_STATE = {
             highlighted: false
         },
         {
+            id: "20191122130017",
             image: motor,
             title: "Mansão nova 1000m2 com piscina olímpica",
             finishindDate: 40,
