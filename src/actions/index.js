@@ -1,8 +1,8 @@
-const mongodb = (url) => {
+const addFuncs = (func) => {
     return {
-        type: "CONNEC",
-        url: url
+        type: "ADD",
+        func: [...func]
     }
 }
 
-export default mongodb
+export default addFuncs;

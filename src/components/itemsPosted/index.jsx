@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import "./clickedCards.css"
 import "./style.css"
 import store from "../../store"
+import addFuncs from "../../actions"
 
 export default class ItemsPosted extends Component {
     constructor(props) {
@@ -19,8 +20,11 @@ export default class ItemsPosted extends Component {
     componentDidMount() {
         this.setState({
             published: store.getState().published
-        })
+        })        
+    }
 
+    componentWillMount() {
+        store.dispatch(addFuncs([this.cardClicked, this.closingCard]))
     }
 
     closingCard(x) {
@@ -44,9 +48,7 @@ export default class ItemsPosted extends Component {
             x.target.offsetParent.lastChild.classList.remove("active")
             x.target.offsetParent.lastChild.firstChild.classList.remove("active")
             x.target.style.display = "none"
-
         }
-        
     }
 
     // handleChange(e) {
@@ -75,7 +77,6 @@ export default class ItemsPosted extends Component {
     
 
     cardClicked(x) {
-
         if(this.state.cardBtClicked === false) {
             let card = x.target.offsetParent;  
             let cardLeft = x.target.offsetParent.offsetLeft;
@@ -145,7 +146,7 @@ export default class ItemsPosted extends Component {
                                                 </div> 
                                             </div>
                                             <div className="bidding-in-card">
-                                                <div className="card-head">Lance atual:</div>
+                                                <div className="card-head">Ultimo lance:</div>
                                                 <div className="current-bidding-value">R$ {card.currentBid}</div>
                                                 <div className="last-bid-info">
                                                     <div>{card.lastBidTime}</div>
