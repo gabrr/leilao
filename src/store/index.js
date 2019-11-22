@@ -53,6 +53,10 @@ const INITIAL_STATE = {
             Kilometragem: 1000
             Flex: Sim
             Categoria: Carro`,
+            details: {
+                category: "vehicles",
+                condition: "new",
+            },
             currentBid: 2800000,
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
@@ -70,6 +74,10 @@ const INITIAL_STATE = {
             Kilometragem: 1000
             Flex: Sim
             Categoria: Carro`,
+            details: {
+                category: "housing",
+                condition: "new",
+            },
             currentBid: 2800000,
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
@@ -87,6 +95,10 @@ const INITIAL_STATE = {
             Kilometragem: 1000
             Flex: Sim
             Categoria: Carro`,
+            details: {
+                category: "vehicles",
+                condition: "used",
+            },
             currentBid: 2800000,
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
@@ -104,6 +116,10 @@ const INITIAL_STATE = {
             Kilometragem: 1000
             Flex: Sim
             Categoria: Carro`,
+            details: {
+                category: "eletronics",
+                condition: "new",
+            },
             currentBid: 2800000,
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
@@ -122,6 +138,10 @@ const INITIAL_STATE = {
             Kilometragem: 1000
             Flex: Sim
             Categoria: Carro`,
+            details: {
+                category: "eletronics",
+                condition: "new",
+            },
             currentBid: 2800000,
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
@@ -139,6 +159,10 @@ const INITIAL_STATE = {
             Kilometragem: 1000
             Flex: Sim
             Categoria: Carro`,
+            details: {
+                category: "eletronics",
+                condition: "new",
+            },
             currentBid: 2800000,
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
@@ -156,6 +180,10 @@ const INITIAL_STATE = {
             Kilometragem: 1000
             Flex: Sim
             Categoria: Carro`,
+            details: {
+                category: "motorcicles",
+                condition: "new",
+            },
             currentBid: 2800000,
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
@@ -173,6 +201,10 @@ const INITIAL_STATE = {
             Kilometragem: 1000
             Flex: Sim
             Categoria: Carro`,
+            details: {
+                category: "vehicles",
+                condition: "new",
+            },
             currentBid: 2800000,
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
@@ -190,6 +222,10 @@ const INITIAL_STATE = {
             Kilometragem: 1000
             Flex: Sim
             Categoria: Carro`,
+            details: {
+                category: "vehicles",
+                condition: "used",
+            },
             currentBid: 2800000,
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
@@ -207,6 +243,10 @@ const INITIAL_STATE = {
             Kilometragem: 1000
             Flex: Sim
             Categoria: Carro`,
+            details: {
+                category: "housing",
+                condition: "new",
+            },
             currentBid: 2800000,
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
@@ -224,6 +264,10 @@ const INITIAL_STATE = {
             Kilometragem: 1000
             Flex: Sim
             Categoria: Carro`,
+            details: {
+                category: "vehicles",
+                condition: "new",
+            },
             currentBid: 2800000,
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
@@ -241,6 +285,10 @@ const INITIAL_STATE = {
             Kilometragem: 1000
             Flex: Sim
             Categoria: Carro`,
+            details: {
+                category: "eletronics",
+                condition: "new",
+            },
             currentBid: 2800000,
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
@@ -258,6 +306,10 @@ const INITIAL_STATE = {
             Kilometragem: 1000
             Flex: Sim
             Categoria: Carro`,
+            details: {
+                category: "vehicles",
+                condition: "new",
+            },
             currentBid: 2800000,
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
@@ -275,6 +327,10 @@ const INITIAL_STATE = {
             Kilometragem: 1000
             Flex: Sim
             Categoria: Carro`,
+            details: {
+                category: "vehicles",
+                condition: "new",
+            },
             currentBid: 2800000,
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
@@ -292,6 +348,10 @@ const INITIAL_STATE = {
             Kilometragem: 1000
             Flex: Sim
             Categoria: Carro`,
+            details: {
+                category: "eletronics",
+                condition: "used",
+            },
             currentBid: 2800000,
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
@@ -309,6 +369,10 @@ const INITIAL_STATE = {
             Kilometragem: 1000
             Flex: Sim
             Categoria: Carro`,
+            details: {
+                category: "motorcicles",
+                condition: "new",
+            },
             currentBid: 2800000,
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
