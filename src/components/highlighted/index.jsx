@@ -25,26 +25,26 @@ export default class Highlighted extends Component {
         store.getState().funcs[1](x)
         // when close cards, func from intemsPosted
     }
-
-    biddingFormat(lastB = 0, newBid, minBidAllowed) {
-        if(newBid >= minBidAllowed) {
-            let sum = parseInt(newBid) + parseInt(lastB);
-            return sum.toLocaleString('pt-BR');
-        } else if(!newBid) {
-            return lastB.toLocaleString('pt-BR');
-        } else {
-            return false 
-        }
-        // with one parameter formats data, if more than one parameter it sums the two, 
-        // if third parameter is true, it will return the sum only if the second num is higher.
-    }
-
+    
     handleChange(e) {
         this.setState({
             inputValue: e.target.value
         })
         // this is for saving data to the input
     }
+    biddingFormat(lastB = 0, newBid, minBidAllowed) {
+        if(newBid >= minBidAllowed) {
+            let sum = parseInt(newBid) + parseInt(lastB);
+            return  `R$ ${sum.toLocaleString('pt-BR')}`
+        } else if(!newBid) {
+            return `R$ ${lastB.toLocaleString('pt-BR')}`
+        } else {
+            return `Lance mínimo R$ ${minBidAllowed.toLocaleString('pt-BR')}` 
+        }
+        // with one parameter formats data, if more than one parameter it sums the two, 
+        // if third parameter is true, it will return the sum only if the second num is higher.
+    }
+
 
     componentDidMount() {
         const products = store.getState().published.filter(x => x.highlighted)
@@ -76,7 +76,7 @@ export default class Highlighted extends Component {
                                     </div>
                                     <div className="bidding-in-card">
                                         <div className="card-head">Último lance:</div>
-                                        <div className="current-bidding-value">R$ {this.biddingFormat(card.currentBid)}</div>
+                                        <div className="current-bidding-value">{this.biddingFormat(card.currentBid)}</div>
                                         <div className="last-bid-info">
                                             <div>{card.lastBidTime}</div>
                                             <div>Usuário: {card.userBidded}</div>
@@ -90,7 +90,7 @@ export default class Highlighted extends Component {
                                         </div>
                                         <div className="users-bid">
                                             <div className="card-head">Seu lance:</div>
-                                            <div className="txt-high">R$ {this.biddingFormat(card.currentBid, this.state.inputValue, card.newBid)}</div>
+                                            <div className="txt-high">{this.biddingFormat(card.currentBid, this.state.inputValue, card.minBid)}</div>
                                         </div>
                                     </div>
                                 </div>

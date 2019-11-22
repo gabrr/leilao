@@ -62,11 +62,11 @@ export default class ItemsPosted extends Component {
     biddingFormat(lastB, newBid, minBidAllowed) {
         if(newBid >= minBidAllowed) {
             let sum = parseInt(newBid) + parseInt(lastB);
-            return sum.toLocaleString('pt-BR');
+            return  `R$ ${sum.toLocaleString('pt-BR')}`
         } else if(!newBid) {
-            return lastB.toLocaleString('pt-BR');
+            return `R$ ${lastB.toLocaleString('pt-BR')}`
         } else {
-            return false 
+            return `Lance mínimo R$ ${minBidAllowed.toLocaleString('pt-BR')}` 
         }
     }
 
@@ -161,13 +161,13 @@ export default class ItemsPosted extends Component {
                                             </div>
                                             <div className="bidding-in-card">
                                                 <div className="card-head">Último lance:</div>
-                                                <div className="current-bidding-value">R$ {this.biddingFormat(card.currentBid)}</div>
+                                                <div className="current-bidding-value">{this.biddingFormat(card.currentBid)}</div>
                                                 <div className="last-bid-info">
                                                     <div>{card.lastBidTime}</div>
                                                     <div>Usuário: {card.userBidded}</div>
                                                 </div>
                                                 <div className="bidding-input-outer">
-                                                    <input id="biddingInput" className="round el2-cl" type="number" onChange={this.handleChange}  placeholder={`Mínimo: ${this.biddingFormat(card.minBid)}`}/>
+                                                    <input id="biddingInput" className="round el2-cl" type="number" onChange={this.handleChange}  maxLength={"11"} placeholder={`Mínimo: ${this.biddingFormat(card.minBid)}`}/>
                                                     <div id="addition-sign">
                                                         <div></div>
                                                         <div></div>
@@ -175,7 +175,7 @@ export default class ItemsPosted extends Component {
                                                 </div>
                                                 <div className="users-bid">
                                                     <div className="card-head">Seu lance:</div>
-                                                    <div className="txt-high">R$ {this.biddingFormat(card.currentBid, this.state.inputValue, card.minBid)}</div>
+                                                    <div className="txt-high">{this.biddingFormat(card.currentBid, this.state.inputValue, card.minBid)}</div>
                                                 </div>
                                             </div>
                                         </div>
