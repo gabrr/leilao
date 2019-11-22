@@ -56,7 +56,7 @@ const INITIAL_STATE = {
             currentBid: 2800000,
             lastBidTime: "14/11/2019 16:45",
             userBidded: "Tarcizo",
-            minBid: 3000,
+            minBid: 5000,
             Owner: "gabrr",
             highlighted: false
         },

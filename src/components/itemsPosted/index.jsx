@@ -8,13 +8,14 @@ export default class ItemsPosted extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            cardBtClicked: false
+            cardBtClicked: false,
+            inputValue: 0
         }
 
         this.cardClicked = this.cardClicked.bind(this)
         this.closingCard = this.closingCard.bind(this)
-        // this.handleChange = this.handleChange.bind(this)
-        // this.biddingFormat = this.biddingFormat.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+        this.biddingFormat = this.biddingFormat.bind(this)
     }
 
     componentDidMount() {
@@ -52,39 +53,31 @@ export default class ItemsPosted extends Component {
         }
     }
 
-    // handleChange(e) {
-    //     let value = e.target.value;
-    //     this.setState({
-    //         inputValue: value
-    //     })
-
-    //     if(e.target.value < 3000) {
-    //         document.getElementById("biddingInput").style.backgroundColor = "#5F5F9C"
-    //     } else {
-    //         document.getElementById("biddingInput").style.backgroundColor = "#44ec7052"
-    //     }
-    // }
-
-    // biddingFormat(num) {
-    //     if(num) {
-    //         let sum = parseInt(num) + parseInt(this.state.currentBid)
-    //         sum = sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    //         return `R$ ${sum}`
-    //     }
-
-    //     let sum = this.state.currentBid.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    //     return `R$ ${sum}`
-    // }
-
-    handlingData(docId) {
-        console.log(docId)
-
-        // manage the data that will go to the cards
+    handleChange(e) {
+        this.setState({
+            inputValue: e.target.value
+        })
     }
+
+    biddingFormat(lastB, newBid, minBidAllowed) {
+        if(newBid >= minBidAllowed) {
+            let sum = parseInt(newBid) + parseInt(lastB);
+            return  `R$ ${sum.toLocaleString('pt-BR')}`
+        } else if(!newBid) {
+            return `R$ ${lastB.toLocaleString('pt-BR')}`
+        } else {
+            return `Lance mínimo R$ ${minBidAllowed.toLocaleString('pt-BR')}` 
+        }
+    }
+
+    // handlingData(docId) {
+    //     console.log(docId)
+
+    //     // manage the data that will go to the cards
+    // }
 
 
     cardClicked(x) {
-        this.handlingData(x.target.id);
         if(this.state.cardBtClicked === false) {
             let card = x.target.offsetParent;  
             let cardLeft = x.target.offsetParent.offsetLeft;
@@ -168,13 +161,13 @@ export default class ItemsPosted extends Component {
                                             </div>
                                             <div className="bidding-in-card">
                                                 <div className="card-head">Último lance:</div>
-                                                <div className="current-bidding-value">R$ {card.currentBid}</div>
+                                                <div className="current-bidding-value">{this.biddingFormat(card.currentBid)}</div>
                                                 <div className="last-bid-info">
                                                     <div>{card.lastBidTime}</div>
                                                     <div>Usuário: {card.userBidded}</div>
                                                 </div>
                                                 <div className="bidding-input-outer">
-                                                    <input id="biddingInput" className="round el2-cl" type="number" placeholder={`Mínimo: ${card.minBid}`}/>
+                                                    <input id="biddingInput" className="round el2-cl" type="number" onChange={this.handleChange}  maxLength={"11"} placeholder={`Mínimo: ${this.biddingFormat(card.minBid)}`}/>
                                                     <div id="addition-sign">
                                                         <div></div>
                                                         <div></div>
@@ -182,7 +175,7 @@ export default class ItemsPosted extends Component {
                                                 </div>
                                                 <div className="users-bid">
                                                     <div className="card-head">Seu lance:</div>
-                                                    <div className="txt-high">R$ 2.900.000</div>
+                                                    <div className="txt-high">{this.biddingFormat(card.currentBid, this.state.inputValue, card.minBid)}</div>
                                                 </div>
                                             </div>
                                         </div>
