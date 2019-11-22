@@ -78,6 +78,7 @@ export default class ItemsPosted extends Component {
 
 
     cardClicked(x) {
+        console.log(store.getState())
         if(this.state.cardBtClicked === false) {
             let card = x.target.offsetParent;  
             let cardLeft = x.target.offsetParent.offsetLeft;
@@ -144,7 +145,7 @@ export default class ItemsPosted extends Component {
                 <div className="txt-head">Quase encerrando</div>
                 <div className="cards-grid">
                     {
-                        store.getState().published.map(card => {
+                        store.getState().addingFuncs.published.map(card => {
                             return (
                                 <div style={{zIndex: 1, width: "90%", top: "0", left: "0" }} className="card el-cl round shadow">
                                 <img src={card.image} className="round" alt="img of this"/>
