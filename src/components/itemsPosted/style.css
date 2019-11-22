@@ -110,6 +110,7 @@
 .bidding-in-card .txt-high {
     margin-left: 6%;
     font-weight: 600;
+    width: max-content;
 }
 
 .bidding-in-card {
@@ -217,6 +218,10 @@
         grid-column: 1;
         grid-row: 1;
         margin-left: 0;
+    }
+    .bidding-input-outer {
+        width: 140%;
+        max-width: 220px;
     }
     #cardAdditionalData {
         margin-left: 2%;
