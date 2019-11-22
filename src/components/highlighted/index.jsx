@@ -17,12 +17,12 @@ export default class Highlighted extends Component {
     }
 
     cardClicked(x) {
-        store.getState().funcs[0](x)
+        store.getState().addingFuncs.funcs[0](x)
         //, func from intemsPosted
     }
 
     closingCard(x) {
-        store.getState().funcs[1](x)
+        store.getState().addingFuncs.funcs[1](x)
         // when close cards, func from intemsPosted
     }
     
@@ -47,7 +47,7 @@ export default class Highlighted extends Component {
 
 
     componentDidMount() {
-        const products = store.getState().published.filter(x => x.highlighted)
+        const products = store.getState().addingFuncs.published.filter(x => x.highlighted)
         this.setState({
             highlighted: products
         })
